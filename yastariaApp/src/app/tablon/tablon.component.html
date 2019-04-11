@@ -1,0 +1,11 @@
+<h2>Tablón de anuncios</h2>
+
+<span>
+  <input type="text" [(ngModel)]="filtro" placeholder="Buscar por palabra"/>
+</span>
+
+<section>
+
+  <usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario"></usuario-tablon>
+
+</section>

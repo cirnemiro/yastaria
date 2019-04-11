@@ -32,7 +32,11 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
+<<<<<<< HEAD
                "node_modules/bootstrap/dist/js/bootstrap.min.js"
+=======
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+>>>>>>> 1e7c95f8ff6aae15927b67cdb3c3c84f231e6429
             ],
             "es5BrowserSupport": true
           },
