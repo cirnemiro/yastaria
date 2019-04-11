@@ -1,3 +1,16 @@
-<p>
-  tablon works!
-</p>
+<h2>Tablón de anuncios</h2>
+<span>
+  <input type="text" [(ngModel)]="filtro" placeholder="Buscar por palabra"/>
+</span>
+<!-- <select [(ngModel)]="proyect">
+    <option></option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>    
+</select> -->
+<section>
+  <li *ngFor="let usuario of filtrarPorFiltro(filtro)">
+    <img *ngIf="usuario.foto" [src]="usuario.foto" alt="">
+    <span>{{usuario.nombre}}</span>
+  </li>
+</section>
