@@ -1,12 +1,8 @@
-<h3>Nombre</h3>
+<h3>{{usuario.nombre}}</h3>
 <article>
   <div>
-    <img src="assets/usuario_vacio.png">
-    <img class="estrellas" src="assets/estrella_dorada.png">
-    <img class="estrellas" src="assets/estrella_dorada.png">
-    <img class="estrellas" src="assets/estrella_dorada.png">
-    <img class="estrellas" src="assets/estrella_dorada.png">
-    <img class="estrellas" src="assets/estrella_dorada.png">
+    <img src={{usuario.foto}}>
+    <img *ngFor="let unUsuario in range(4)" class="estrellas" src="assets/estrella_dorada.png">
     <img src="assets/mensaje_chat.png">
   </div>
   
@@ -16,5 +12,6 @@
     <h4>Ofrezco</h4>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima atque, illo veni</p>
   </div>
+  
 </article>
 

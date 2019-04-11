@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'usuario-tablon',
@@ -11,5 +11,8 @@ export class UsuarioTablonComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input()
+  usuario;
 
 }
