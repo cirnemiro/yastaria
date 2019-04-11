@@ -9,7 +9,6 @@ export class UsuarioTablonComponent implements OnInit {
 
  constructor() { }
 
-
  @Input()
  usuario;
 

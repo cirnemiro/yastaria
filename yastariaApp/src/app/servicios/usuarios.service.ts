@@ -29,10 +29,10 @@ export class UsuariosService {
     return this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d');
   };
 
-  getUsuariosById(unId) {
-    return this._usuarios.find(function (aUser) {
-      return aUser.id == unId;
-    });
-  }
+  // getUsuariosById(unId) {
+  //   return this._usuarios.find(function (aUser) {
+  //     return aUser.id == unId;
+  //   });
+  // }
 
 }
