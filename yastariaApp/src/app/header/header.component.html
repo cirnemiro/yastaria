@@ -1,0 +1,18 @@
+<header>
+  <div>
+      <img src=""/> <p>aquí va el logo + claim</p>
+  </div>
+  <div>
+    <form #loginForm="ngForm" (ngSubmit)="formularioLogin()">
+      <input type="text" [(ngModel)] = "login.usuario" name= "usuario" placeholder="Nombre de usuarix" required>
+      <input type="text"[(ngModel)] = "login.contra" name= "contra" placeholder="Contraseña" required>
+      <button>OK</button>
+    </form>
+  </div> 
+</header>
+<hr>
+
+<!-- COMPROBAR
+<pre>{{login|json}}</pre>
+
+<pre>{{loginForm.valid}}</pre> -->
