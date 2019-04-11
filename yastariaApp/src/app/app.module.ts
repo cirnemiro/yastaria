@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TablonComponent } from './tablon/tablon.component';
+import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TablonComponent
+    TablonComponent,
+    UsuarioTablonComponent
   ],
   imports: [
     BrowserModule,
