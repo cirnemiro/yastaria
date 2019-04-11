@@ -5,26 +5,7 @@
 </span>
 
 <section>
-<!-- <div *ngFor="let usuario of filtrarPorFiltro(filtro)">
-  <h3>{{usuario.nombre}}</h3>
-  <article>
-    <div>
-      <img src="assets/usuario_vacio.png">
-      <li *ngFor="let i=0; i={{usuario.puntuacion}}; i++">
-        <img class="estrellas" src="assets/estrella_dorada.png">
-      </li>
-      <img src="assets/mensaje_chat.png">
-    </div>
-    <div>
-      <h4>Busco:</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fugiat optio ipsam,</p>
-      <h4>Ofrezco</h4>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima atque, illo veni</p>
-    </div>
-  </article>
-</div> -->
 
-<usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario"></usuario-tablon>
-
+  <usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario"></usuario-tablon>
 
 </section>
