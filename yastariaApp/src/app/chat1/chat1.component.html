@@ -1,0 +1,17 @@
+{{listaMsjs|json}}
+
+<div>
+  <h2>CHAT</h2>
+  <div class="mensajes">
+    <output *ngFor="let aM of listaMsjs" [class]="aM.emisor===23?'enviado':'recibido'">
+      {{aM.fecha}} | {{aM.emisor}} | {{aM.mensaje}}
+    </output>
+    <!--mensajes del chat, división entre emisor y receptor según id-->
+  </div>
+
+  <hr>
+  <form #chatForm="ngForm" (ngSubmit)="enviarMensaje()">
+    <input type="text" [(ngModel)]="chat1.mensaje" name="mensaje" placeholder="Escribe aquí tu mensaje" required />
+    <button>Enviar</button>
+  </form>
+</div>

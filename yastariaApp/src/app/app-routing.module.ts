@@ -4,10 +4,13 @@ import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.c
 import { FormularioComponent } from './formulario/formulario.component';
 import { TablonComponent } from './tablon/tablon.component';
 import { QuienesComponent } from './quienes/quienes.component';
+import { Chat1Component } from './chat1/chat1.component';
+
 
 
 const routes: Routes = [
   { path: 'tablon', component: TablonComponent, pathMatch: 'full' },
+  { path: 'chat', component: Chat1Component, pathMatch: 'full' },
   { path: 'usuario', component: UsuarioTablonComponent, pathMatch: 'full' },
   { path: 'registro', component: FormularioComponent, pathMatch: 'full' },
   { path: 'quienes-somos', component: QuienesComponent, pathMatch: 'full' },

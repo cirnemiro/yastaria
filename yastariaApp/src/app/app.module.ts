@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TablonComponent } from './tablon/tablon.component';
 import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
 import { HeaderComponent } from 'src/app/header/header.component';
+import { Chat1Component } from './chat1/chat1.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
@@ -19,6 +20,7 @@ import { QuienesComponent } from './quienes/quienes.component';
     HeaderComponent,
     TablonComponent,
     UsuarioTablonComponent,
+    Chat1Component,
     FormularioComponent,
     FooterComponent,
     NavComponent,
