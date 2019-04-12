@@ -20,15 +20,11 @@ import { QuienesComponent } from './quienes/quienes.component';
     HeaderComponent,
     TablonComponent,
     UsuarioTablonComponent,
-<<<<<<< HEAD
     Chat1Component,
-    FormularioComponent
-=======
     FormularioComponent,
     FooterComponent,
     NavComponent,
     QuienesComponent
->>>>>>> 2ce8a75b9af0578030e799be72211ba87083f2e8
   ],
   imports: [
     BrowserModule,
