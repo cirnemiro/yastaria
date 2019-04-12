@@ -4,6 +4,7 @@ import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.c
 import { FormularioComponent } from './formulario/formulario.component';
 import { TablonComponent } from './tablon/tablon.component';
 
+
 const routes: Routes = [
   { path: 'tablon', component: TablonComponent, pathMatch: 'full' },
   { path: 'usuario', component: UsuarioTablonComponent, pathMatch: 'full' },
