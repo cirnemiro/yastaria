@@ -1,0 +1,9 @@
+<div>
+  <h2> CHAT</h2>
+  <form #chatForm="ngForm" (ngSubmit)="formularioChat()">
+    <output class="enviado">hola!</output><br />
+    <output class="recibido">respuesta</output><br /><hr>
+      <input type="text" [(ngModel)] = "chat1.mensaje" name = "mensaje" placeholder="Escribe aquí tu mensaje" required />
+       <button>Enviar</button>
+  </form>
+</div>
