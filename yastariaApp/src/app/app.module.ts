@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TablonComponent } from './tablon/tablon.component';
 import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
 import { HeaderComponent } from 'src/app/header/header.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HeaderComponent } from 'src/app/header/header.component';
     HeaderComponent,
     TablonComponent,
     UsuarioTablonComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

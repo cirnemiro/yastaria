@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 const routes: Routes = [
-  {path: 'usuario', component:UsuarioTablonComponent,pathMatch:'full' }
+  {path: 'usuario', component:UsuarioTablonComponent,pathMatch:'full' },
+  {path: 'registro', component:FormularioComponent,pathMatch:'full' },
 ];
 
 @NgModule({
