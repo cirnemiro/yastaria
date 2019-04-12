@@ -5,6 +5,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { TablonComponent } from './tablon/tablon.component';
 import { Chat1Component } from './chat1/chat1.component';
 
+
 const routes: Routes = [
   { path: 'tablon', component: TablonComponent, pathMatch: 'full' },
   { path: 'chat', component: Chat1Component, pathMatch: 'full' },
