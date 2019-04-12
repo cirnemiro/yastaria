@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { TablonComponent } from './tablon/tablon.component';
 
 const routes: Routes = [
-  {path: 'usuario', component:UsuarioTablonComponent,pathMatch:'full' },
-  {path: 'registro', component:FormularioComponent,pathMatch:'full' },
+  { path: 'tablon', component: TablonComponent, pathMatch: 'full' },
+  { path: 'usuario', component: UsuarioTablonComponent, pathMatch: 'full' },
+  { path: 'registro', component: FormularioComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'tablon', pathMatch: 'full' },
+
 ];
 
 @NgModule({
@@ -13,4 +17,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-    
