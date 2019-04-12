@@ -9,28 +9,25 @@ import { Chat } from 'src/app/modelos/chat';
 })
 export class Chat1Component implements OnInit {
 
-  constructor(private _chatServ: ChatService ) { }
+  constructor(private _chatServ: ChatService) { }
 
-  chat1 = new Chat(null, null, null, null);
-  
+  chat1 = new Chat(23, "2019-04-12 23:45", 3, null);
+
+  listaMsjs:Chat[]=null;
+
 
   ngOnInit() {
-  }
-
-  formularioChat(){
-    console.log('Nombre usuarioE: ', this.chat1.usuarioEmisor);
-    console.log('Hora: ', this.chat1.hora);
-    console.log('Nombre usuarioR: ', this.chat1.usuarioReceptor);
-    console.log('Mensaje: ', this.chat1.mensaje);
-    this._chatServ.addChatToAPI(this.chat1).subscribe(chat1=>{
-      console.log('Info del mensaje: ',chat1);
+    this._chatServ.getChatFromAPI().subscribe((msjs) => {//Consumimos el observable subscribiéndonos y le pasamos una función de callback
+      this.listaMsjs=msjs;
     });
-
-    this._chatServ.getChatFromAPI().subscribe((chat1) => {//Consumimos el observable subscribiéndonos y le pasamos una función de callback
-      console.log('Info del mensaje: ',chat1);
-   });
-  
   }
 
-  
+  enviarMensaje() {
+    console.log('Mensaje: ', this.chat1);
+    this._chatServ.addChatToAPI(this.chat1).subscribe(chatCambiado => {
+      console.log('Info del mensaje: ', chatCambiado);
+    });
+  }
+
+
 }

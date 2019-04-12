@@ -9,6 +9,7 @@ import { TablonComponent } from './tablon/tablon.component';
 import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
 import { HeaderComponent } from 'src/app/header/header.component';
 import { Chat1Component } from './chat1/chat1.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { Chat1Component } from './chat1/chat1.component';
     TablonComponent,
     UsuarioTablonComponent,
     Chat1Component,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

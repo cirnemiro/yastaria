@@ -35,4 +35,12 @@ export class UsuariosService {
   //   });
   // }
 
+  addUsuario(unuser: Usuario){
+    this._usuarios.push(unuser);
+  }
+
+  addUsuarioToAPI(unUser: Usuario) {
+    return this._http.post<Usuario>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d',unUser);
+    //enviar usuario a la API
+  }
 }
