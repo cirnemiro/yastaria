@@ -9,7 +9,7 @@ import { UsuariosService } from '../servicios/usuarios.service';
 })
 export class FormularioComponent implements OnInit {
 
-  nuevoUsuario = new Usuario(0,null,null,null,null,null,null,null,null,null,null);
+  nuevoUsuario = new Usuario(0,null,null,null,null,null,null,0,null,null,null,null, null, null);
 
   constructor(private _userServ: UsuariosService, private _router: Router) { }
 
@@ -19,7 +19,7 @@ export class FormularioComponent implements OnInit {
     console.log('Formulario:', this.nuevoUsuario);
     this._userServ.addUsuarioToAPI(this.nuevoUsuario).subscribe(nuevoUsuario => {
       console.log('respuesta post:', nuevoUsuario);
-      this._router.navigate(['/Formulario']);
+      this._router.navigate(['/']);
     });
   }
 
