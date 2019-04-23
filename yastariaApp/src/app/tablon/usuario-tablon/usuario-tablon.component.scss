@@ -1,8 +1,9 @@
-*{
-    padding: 0;
-    margin: 0;
-    border: 1px solid black;
- }
+
+ .general{
+    border: 5px solid rgba(66, 121, 66, 0.385);
+    border-radius: 10px;
+    margin-bottom: 3vw;
+}
  article{
     display: flex;
  }
@@ -23,4 +24,11 @@
  .imagenChat{
     width: 30%;
     display: block;
+ }
+ h3{
+    border-bottom: 2px solid rgba(66, 121, 66, 0.685);
+    padding: 2vw;
+    font-size: calc(15px + 2vw);
+    margin: 0;
+    color: cornflowerblue;
  }

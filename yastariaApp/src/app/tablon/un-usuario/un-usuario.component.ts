@@ -13,6 +13,7 @@ export class UnUsuarioComponent implements OnInit {
  usuarios = null;
  unUsuario: Usuario = null;
  estrellas=[0,0,0,0,0];
+ votacion = 0;
 
   constructor(private _userServ: UsuariosService, private _route: ActivatedRoute) { }
 
@@ -29,6 +30,19 @@ export class UnUsuarioComponent implements OnInit {
       })
     });
   }
+  guardarFormulario(){
+    this._route.params.subscribe(parametros => {
+      const userId = parametros['id'];
+      console.log(' votacion:', this.votacion);
+      console.log('id:', userId);
+      this._userServ.getUsuarioById(userId).subscribe(user => {
+        this.unUsuario = user;
+        console.log('user:', user);
+        this.unUsuario.puntuacion=(parseInt(this.votacion)+parseInt(this.unUsuario.puntuacion))/2;
+        console.log(' this.unUsuario.puntuacion:',  this.unUsuario.puntuacion);
+      })
+    })
+ }
 
   // ngOnInit() {
   //   this._route.params.subscribe(parametros => {

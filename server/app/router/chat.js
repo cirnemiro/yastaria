@@ -38,10 +38,10 @@ router.route('/chat')
 router.route('/chat/:piemisor/:idreceptor')
     .get(function(req, res){
         // res.json({data:'Hola: '+req.params.pid});
-        Chat.findById(req.params.pid).then(aMascota => {
-            res.json(aMascota);
+        Chat.findById(req.params.pid).then(unChat => {
+            res.json(unChat);
         }).catch(err => {
-            console.log('Error getting a mascota: '+req.params.pid, err);
+            console.log('Error getting un chat: '+req.params.pid, err);
             res.status(500).send({ message: 'Server error' });
         });
     });

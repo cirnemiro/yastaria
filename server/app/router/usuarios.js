@@ -4,8 +4,12 @@ const Usuario = require('../models/usuario');
 router.route('/usuarios')
 
     .get(function (req, res) {
+        const filtro = {};
+        filtro.zona = req.query.zona;
+        filtro.tema = req.query.tema;
+        console.log('filtro:', filtro);
 
-        Usuario.find().then(usuarios => {
+        Usuario.find(filtro).then(usuarios => {
             res.json(usuarios);
         }).catch(err => {
             console.log('Error getting usuarios:', err);
