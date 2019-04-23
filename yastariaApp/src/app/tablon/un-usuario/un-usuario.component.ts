@@ -24,9 +24,9 @@ export class UnUsuarioComponent implements OnInit {
       this._userServ.getUsuarioById(userId).subscribe(user => {
         this.unUsuario = user;
         console.log('user:', user);
-        for (let index = 1; index <= this.unUsuario.puntuacion; index++) {
-          this.estrellas[index-1]=1;
-        }
+        // for (let index = 1; index <= this.unUsuario.puntuacion; index++) {
+        //   this.estrellas[index-1]=1;
+        // }
       })
     });
   }

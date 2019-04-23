@@ -15,6 +15,7 @@ import { NavComponent } from './nav/nav.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
+import { FiltrosComponent } from 'src/app/tablon/filtros/filtros.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
     NavComponent,
     QuienesComponent,
     GaleriaComponent,
-    UnUsuarioComponent
+    UnUsuarioComponent,
+    FiltrosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,17 @@
 
 
 
-section:first-of-type{
+#intro{
     display:flex;
     padding-left:4%;
     padding-right:4%;
     color:white;
     margin-bottom: 6%;
     margin-top:4%;
+}
+.tablon{
+    padding: 3vw;
+    
 }
 
 section:first-of-type div:nth-of-type(1){

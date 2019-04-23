@@ -1,76 +1,122 @@
-
-  <h2>REGISTRO</h2>
-  <br />
-  <div>
-    <form #usuarioForm="ngForm" (ngSubmit)="guardarFormulario()">
-      <div class="borde">
+<h2>
+  REGISTRO</h2>
+<br />
+<div>
+  <form #usuarioForm="ngForm" (ngSubmit)="guardarFormulario()">
+    <div class="borde">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nombre">Nombre</label>
-          <input [(ngModel)]="nuevoUsuario.nombre" type="text" class="form-control" id="nombre" placeholder="Nombre"
-            name="nombre" required>
+          <input [(ngModel)]="nuevoUsuario.nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre"
+            required>
         </div>
+
         <div class="form-group col-md-6">
           <label for="apellidos">Apellidos</label>
-          <input [(ngModel)]="nuevoUsuario.apellidos" type="text" class="form-control" id="apellidos"
-            placeholder="Apellidos" name="apellidos" required>
+          <input [(ngModel)]="nuevoUsuario.apellidos" type="text" class="form-control" id="apellidos" placeholder="Apellidos" name="apellidos"
+            required>
         </div>
-        
+
         <div class="form-group col-md-6">
-            <label for="fechaNacimiento">Fecha Nacimiento</label>
-            <input [(ngModel)]="nuevoUsuario.fechaNacimiento" type="number" class="form-control" id="fechaNacimiento"
-              placeholder="Fecha Nacimiento" name="fechaNacimiento" required>
+          <label for="fechaNacimiento">Fecha Nacimiento</label>
+          <input [(ngModel)]="nuevoUsuario.fechaNacimiento" type="" class="form-control" id="fechaNacimiento" placeholder="Fecha Nacimiento"
+            name="fechaNacimiento" required>
         </div>
+
         <div class="form-group col-md-6">
-            <label for="correo">Email</label>
-            <input [(ngModel)]="nuevoUsuario.correo" type="text" class="form-control" id="correo"
-              placeholder="Correo" name="correo" required>
+          <label for="correo">Email</label>
+          <input [(ngModel)]="nuevoUsuario.correo" type="text" class="form-control" id="correo" placeholder="Correo" name="correo"
+            required>
         </div>
+
         <div class="form-group col-md-6">
-            <label for="correo">Teléfono</label>
-            <input [(ngModel)]="nuevoUsuario.telefono" type="text" class="form-control" id="telf"
-            placeholder="Teléfono sin prefijo" name="telf" required>
+          <label for="telefono">Teléfono</label>
+          <input [(ngModel)]="nuevoUsuario.telefono" type="number" class="form-control" id="telefono" placeholder="Teléfono sin prefijo"
+            name="telf" required>
         </div>
+
         <div class="form-group col-md-6">
-            <label for="descripcion">Barrio</label>
-            <input [(ngModel)]="nuevoUsuario.descripcion" type="text" class="form-control" id="barrio"
-              placeholder="Barrio/Distrito" name="barrio" required>
+          <label for="barrio">Barrio</label>
+          <select name="barrio" [(ngModel)]="nuevoUsuario.barrio" required class="form-control" id="barrio">
+            <option value="ciutat vella">Ciutat Vella</option>
+            <option value="eixample">Eixample</option>
+            <option value="sants montjuic">Sants-Montjuic</option>
+            <option value="corts">Les Corts</option>
+            <option value="sarria sant gervasi">Sarrià-Sant Gervasi</option>
+            <option value="gracia">Gràcia</option>
+            <option value="horta">Horta-Guinardó</option>
+            <option value="nous barris">Nous Barris</option>
+            <option value="sant andreu">Sant Andreu</option>
+            <option value="sant marti">Sant Martí</option>
+          </select>
         </div>
+
         <div class="form-group col-md-6">
-            <label for="inputPassword">Contraseña</label>
-            <input [(ngModel)]="nuevoUsuario.contra" type="password" class="form-control" id="inputPassword"
-              placeholder="Letras, números y símbolos permitidos" name="contra" required>
-          </div>
+          <label for="inputPassword">Contraseña</label>
+          <input [(ngModel)]="nuevoUsuario.contra" type="password" class="form-control" id="inputPassword" placeholder="Letras, números y símbolos permitidos"
+            name="contra" required>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputPassword2">Repite Contraseña</label>
+          <input type="password" placeholder="Repite contraseña" class="form-control" id="inputPassword2" name="contraseña" required>
+        </div>
+
+
+        <div class="form-group col-md-6">
+          <label for="ofrece">Ofrece</label>
+          <input [(ngModel)]="nuevoUsuario.ofrece" type="text" class="form-control" id="ofrece" placeholder="Ofrece" name="ofrece">
+        </div>
+
+
+        <div class="form-group col-md-6">
+          <label for="necesita">Necesita</label>
+          <input [(ngModel)]="nuevoUsuario.necesita" type="text" class="form-control" id="necesita" placeholder="Necesita" name="necesita">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="tiempo">Cuándo</label>
+          <select name="tiempo" [(ngModel)]="nuevoUsuario.tiempo" required class="form-control" id="tiempo">
+            <option value="hoy">Hoy</option>
+            <option value="esta semana">Esta semana</option>
+            <option value="proxima semana">La próxima semana</option>
+            <option value="entre semana">Entre semana</option>
+            <option value="fin de semana">Fin de semana</option>
+            <option value="todo el dia">Todo el día</option>
+            <option value="mañana">Por la mañana</option>
+            <option value="tarde">Por la tarde</option>
+            <option value="noche">Por la noche</option>
+          </select>
+
           <div class="form-group col-md-6">
-            <label for="inputPassword2">Repite Contraseña</label>
-            <input type="password"   placeholder="Repite contraseña" class="form-control" id="inputPassword2"
-            name="contraseña" required>
+            <label for="tiempo">Tema</label>
+            <select name="tema" [(ngModel)]="nuevoUsuario.tema" required class="form-control" id="tema">
+              <option value="cultura">Cultura</option>
+              <option value="hogar">Hogar</option>
+              <option value="deporte">Deporte</option>
+              <option value="juegos">Juegos</option>
+              <option value="clases">Clases</option>
+              <option value="animales">Animales</option>
+              <option value="otros">Otros</option>
+            </select>
+
+            <div class="form-group">
+              <label for="descripcion">Descripción</label>
+              <input [(ngModel)]="nuevoUsuario.descripcion" type="text" class="form-control" id="descripcion" placeholder="Explica libremente tus hobbies e intereses"
+                name="descripcion" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="foto">Foto</label>
+              <input [(ngModel)]="nuevoUsuario.foto" type="image" class="form-control" id="foto" placeholder="foto" name="foto" required>
+            </div>
+
           </div>
-          
-        
-        <div class="form-group col-md-6">
-            <label for="ofrece">Ofrece</label>
-            <input [(ngModel)]="nuevoUsuario.ofrece" type="text" class="form-control" id="ofrece"
-              placeholder="Ofrece" name="ofrece" >
+
+          <button type="submit">
+            <b>COMENZAR</b>
+          </button>
         </div>
-        <div class="form-group col-md-6">
-            <label for="necesita">Necesita</label>
-            <input [(ngModel)]="nuevoUsuario.necesita" type="text" class="form-control" id="necesita"
-              placeholder="Necesita" name="necesita" >
         </div>
-        <div class="form-group">
-            <label for="barrio">Descripción</label>
-            <input [(ngModel)]="nuevoUsuario.barrio" type="text" class="form-control" id="descripcion"
-            placeholder="Explica libremente tus hobbies e intereses" name="descripcion" required>
-          </div>
-        <div class="form-group col-md-6">
-            <label for="foto">Foto</label>
-            <input [(ngModel)]="nuevoUsuario.foto" type="image" class="form-control" id="foto"
-              placeholder="foto" name="foto" required>
         </div>
       
-      </div>
-    
-      <button type="submit"><b>COMENZAR</b></button>
-</div>
   </form>
