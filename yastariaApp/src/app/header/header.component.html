@@ -2,25 +2,21 @@
   <div>
     <img src="assets/handylogo.png"  name="logo">
   </div>
-<<<<<<< HEAD
-  <div (ngSubmit)="formularioLogin()">
-      
-    <form [(ngModel)] = "login.usuario">
+  <div>      
+    <form (ngSubmit)="formularioLogin()">
         
-      <input type="text"  name= "usuario" placeholder="Nombre de usuarix" required>
+      <input type="text" [(ngModel)] = "login.usuario" name= "usuario" placeholder="Nombre de usuarix" required>
       
       <input type="text" name= "contra" [(ngModel)] = "login.contra" placeholder="Contraseña" required>
       <button>OK</button>
       <p  [routerLink]="['/registro']">Registrarse</p>
     </form>
   </div> 
-=======
   <div>  
     <h1>Encuentra la ayuda que necesitas, <br /> ofrece lo mejor de ti</h1>
     <h1>Handy</h1>
   </div>
 
->>>>>>> c3f0c5d325ae03fa1b6ea2f7f0f7e680506db94b
 </header>
 <hr>
 

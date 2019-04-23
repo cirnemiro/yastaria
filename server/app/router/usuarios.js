@@ -2,7 +2,6 @@ const router = require('express').Router();
 const Usuario = require('../models/usuario');
 
 router.route('/usuarios')
-
     .get(function (req, res) {
         const filtro = {};
         filtro.zona = req.query.zona;
@@ -58,8 +57,6 @@ router.route('/usuarios')
             console.log('Error saving new user:', err);
             res.status(500).send({ message: 'Server error' });
         });
-
-
     });
 
 router.route('/usuarios/:id')

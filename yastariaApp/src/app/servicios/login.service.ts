@@ -13,7 +13,7 @@ export class LoginService {
 
 
   addLoginToAPI(login: Login): Observable<Login> {
-    return this._http.post<Login>('http://www.mocky.io/v2/5caf40683400006f27ab720d', login);
+    return this._http.post<Login>('http://localhost:8080/api/auth', login);
   }
 
 }

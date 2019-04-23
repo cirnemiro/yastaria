@@ -13,13 +13,9 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { QuienesComponent } from './quienes/quienes.component';
-<<<<<<< HEAD
-import { FiltroComponent } from './tablon/filtro/filtro.component';
-=======
 import { GaleriaComponent } from './galeria/galeria.component';
 import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
 import { FiltrosComponent } from 'src/app/tablon/filtros/filtros.component';
->>>>>>> c3f0c5d325ae03fa1b6ea2f7f0f7e680506db94b
 
 @NgModule({
   declarations: [
@@ -32,13 +28,9 @@ import { FiltrosComponent } from 'src/app/tablon/filtros/filtros.component';
     FooterComponent,
     NavComponent,
     QuienesComponent,
-<<<<<<< HEAD
-    FiltroComponent
-=======
     GaleriaComponent,
     UnUsuarioComponent,
     FiltrosComponent
->>>>>>> c3f0c5d325ae03fa1b6ea2f7f0f7e680506db94b
   ],
   imports: [
     BrowserModule,

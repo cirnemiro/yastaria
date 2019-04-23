@@ -14,10 +14,10 @@ export class FiltroComponent implements OnInit {
 
   ngOnInit() {
   }
-  buscar() {
+  // buscar() {
 
-    this._userServ.buscarUsuario(this.busqueda);
+  //   // this._userServ.buscarUsuario(this.busqueda);
 
-  }
+  // }
 
 }
