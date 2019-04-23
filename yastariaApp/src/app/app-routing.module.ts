@@ -12,7 +12,7 @@ import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
 
 const routes: Routes = [
   { path: 'tablon', component: TablonComponent, pathMatch: 'full' },
-  { path: 'chat', component: Chat1Component, pathMatch: 'full' },
+  { path: 'chat/:id', component: Chat1Component, pathMatch: 'full' },
   { path: 'usuario/:id', component: UnUsuarioComponent, pathMatch: 'full' },
   { path: 'registro', component: FormularioComponent, pathMatch: 'full' },
   { path: 'quienes-somos', component: QuienesComponent, pathMatch: 'full' },
