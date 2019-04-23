@@ -1,8 +1,66 @@
-header>form{
-    border: solid 2px grey;
-}
 
 header{
-    display: grid;
+    background-image: url("portada.jpg");
+    background-size:100%;
+    background-repeat: no-repeat;
+    height: 20vh;  
+    display:flex;
+    align-content: center;
+    
+   
+}
+h1{
+    color:rgb(241, 237, 237);
+    text-shadow: 1px 1px 4px #000000;
+    width: 120%;
+    font-size: calc(12px + 2vw);
+}
+img{
+   height: 100%;
+    margin:auto;
+    
+  
+}
+div:nth-of-type(2) h1:last-of-type{
+    display: none;
+}
+
+div:first-of-type{
+    border: solid white 3px;
+    align-content: center;
+    margin: 2vh 1vw;
+}
+
+div:nth-of-type(2){
+    padding-top:3vw;
+    padding-left: 8%;
+    // border-left: solid rgb(241, 237, 237) 3px;
     
 }
+p{
+    display: inline-block;
+    color:white;
+    text-shadow: 1px 1px 4px #000000;
+}
+@media screen and (max-width: 550px){
+     div:nth-of-type(2) h1:first-of-type{
+         display: none;
+     }
+     div:nth-of-type(2) h1:last-of-type{
+        display: block;
+        margin-left: 50%;
+        font-size: 15vw;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+     div:nth-of-type(1){
+        display: none;
+       
+    }
+    hr{
+        display: none;
+    }
+    header{
+        height: 10vh;
+    }
+}
+

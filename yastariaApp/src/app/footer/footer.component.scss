@@ -1,4 +1,23 @@
-div{
-    justify-content: space-around;
-    border: solid 1px black;
+img{
+    width:20%;
 }
+div{
+    flex:1;
+    padding: 2% 5% 2% 5%;
+    flex-wrap: wrap;
+    
+}
+
+div:first-of-type{
+    padding-left: 3vw;
+}
+
+
+p:hover{
+   font-weight: bold;
+    
+}
+p{
+    margin:0;
+} 
+
