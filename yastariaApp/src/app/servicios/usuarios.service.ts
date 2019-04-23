@@ -13,19 +13,29 @@ export class UsuariosService {
 
   constructor(private _http: HttpClient) { }
 
-  getUsuariosFromAPI():Observable<Usuario[]> {
-    return this._http.get<Usuario[]>('http://localhost:8080/api/usuarios');
+  getUsuariosFromAPI(filtros: any): Observable<Usuario[]> {
+    const options = {
+      params: filtros ? filtros : null
+    };
+    return this._http.get<Usuario[]>('http://localhost:8080/api/usuarios', options);
   };
 
-  addUsuario(unuser: Usuario){
+  addUsuario(unuser: Usuario) {
     this._usuarios.push(unuser);
   }
 
   addUsuarioToAPI(unUser: Usuario) {
-    return this._http.post<Usuario>('http://localhost:8080/api/usuarios',unUser);
+    return this._http.post<Usuario>('http://localhost:8080/api/usuarios', unUser);
   }
 
   getUsuarioById(id): Observable<Usuario> {
     return this._http.get<Usuario>(`http://localhost:8080/api/usuarios/${id}`);
   }
+
+  filtrarUsuarios(filtros: any) {
+    this.getUsuariosFromAPI(filtros).subscribe(data => {
+      console.log('usuarios filtrados:', data);
+    })
+  }
+
 }

@@ -18,6 +18,7 @@ export class TablonComponent implements OnInit {
       this.usuarios = listaUsuarios;
     });
   }
+  
   // filtrarPorFiltro(str, proyId) {
   //   if(this.usuarios){
   //     const subconj = this.usuarios.filter(function (aUser) {
