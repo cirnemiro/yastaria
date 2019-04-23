@@ -1,5 +1,20 @@
-<h2>Tablón de anuncios</h2>
+<section id="intro">
+  
+  <div><img src="assets/comida.jpg" name="food"></div>
+  
+  <div class="entrada">
+    <p>La
+      <b>comunidad perfecta</b> para conseguir y dar lo que te apetezca sin gastar dinero.Encuentra un profesor de inglés, una
+      manitas de la casa o alguien con quien ir al cine.</p>
+    <p [routerLink]="['/registro']">
+      <u>
+        <b>¡Apúntate!</b>
+      </u>
+    </p>
+    <img src="assets/handylogo.png" name="logo" id="logo">
+  </div>
 
+<<<<<<< HEAD
 <!-- <span>
   <input type="text" [(ngModel)]="filtro" placeholder="Buscar por palabra"/>
 </span> -->
@@ -22,7 +37,44 @@
   <option>...</option>
 </select>
 <section>
+=======
+  <div>
+    <img src="assets/lectura.png" name="food">
+  </div>
 
-  <usuario-tablon *ngFor="let unUsuario of usuarios"  [usuario]="unUsuario"></usuario-tablon>
+</section>
+>>>>>>> c3f0c5d325ae03fa1b6ea2f7f0f7e680506db94b
 
+
+<section id="cuenta">
+  <div>
+    <p>
+      <b>ENTRA EN TU CUENTA</b>
+    </p>
+    <form>
+      <input type="text" name="usuario" placeholder="  Usuario" class="logear" required>
+      <br />
+      <input type="text" name="contra" placeholder="  Contraseña" class="logear" required>
+      <p>| OK |</p>
+    </form>
+  </div>
+  <div>
+    <p [routerLink]="['/registro']">
+      <b>REGÍSTRATE</b>
+    </p>
+    <p [routerLink]="['/registro']">&#9829;</p>
+  </div>
+</section>
+
+<section>
+
+  <h2 id="tablon">
+    <b>T A B L Ó N</b>
+  </h2>
+  <div class="oculto">
+    <filtros></filtros>
+    <section>
+      <usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario"></usuario-tablon>
+    </section>
+  </div>
 </section>

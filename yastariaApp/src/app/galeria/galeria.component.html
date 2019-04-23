@@ -1,0 +1,65 @@
+<br /><h2>GALERÍA</h2><br />
+
+
+
+<section id="galeria">
+    <figure>
+      <img src="assets/gal1.jpg" alt="Bart 1" >
+    </figure>
+
+    <figure>
+      <img src="assets/gal2.jpg" alt="Bart 2" >
+    </figure>
+
+    <figure>
+      <img src="assets/gal3.jpg" alt="Bart 3" >
+    </figure>
+
+    <figure>
+      <img src="assets/gal4.jpg" alt="Bart 4" >
+    </figure>
+
+    <figure>
+      <img src="assets/gal5.jpg" alt="Bart 5" >
+    </figure>
+    <div>
+      <hr>
+      <p>+ MÁS</p>
+     
+    </div>
+
+  
+  </section>
+
+  <script>
+
+window.onload = function(){
+  var figuras = document.getElementById('galeria').getElementsByTagName('figure');
+  for(var i=0; i<figuras.length; i++){
+    figuras[i].onclick = function(){
+						mostrar(this);
+					}
+				}
+      }
+      
+      function mostrar(figura){
+        var figuraGrande = document.createElement('figure');
+        figuraGrande.setAttribute('id','grande');
+        figuraGrande.onclick = function(){this.remove();}
+
+        var imagen = document.createElement('img');
+        imagen.setAttribute('src', figura.firstElementChild.src);
+        
+        figuraGrande.appendChild(imagen);				
+        document.body.appendChild(figuraGrande);
+			}
+
+      function bart(){
+				var imagenes = document.getElementsByTagName('gal');
+
+				for(let i=0; i<imagenes.length; i++){
+					imagenes[i].src = "gal"+(i+1)+".jpg";
+				}
+				document.body.firstElementChild.innerHTML = "GALERÍA";
+			}
+  </script>

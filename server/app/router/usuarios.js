@@ -4,8 +4,12 @@ const Usuario = require('../models/usuario');
 router.route('/usuarios')
 
     .get(function (req, res) {
+        const filtro = {};
+        filtro.zona = req.query.zona;
+        filtro.tema = req.query.tema;
+        console.log('filtro:', filtro);
 
-        Usuario.find().then(usuarios => {
+        Usuario.find(filtro).then(usuarios => {
             res.json(usuarios);
         }).catch(err => {
             console.log('Error getting usuarios:', err);
@@ -18,7 +22,7 @@ router.route('/usuarios')
 
         usuario.nombre = req.body.nombre;
         usuario.apellidos = req.body.apellidos;
-        
+
         usuario.genero = req.body.genero;
         usuario.fechaNacimiento = req.body.fechaNacimiento;
         usuario.descripcion = req.body.descripcion;
@@ -58,5 +62,13 @@ router.route('/usuarios')
 
     });
 
+router.route('/usuarios/:id')
+    .get(function (req, res) {
+        Usuario.findById(req.params.id).then(unUsuario => {
+            res.json(unUsuario);
+        }).catch(err => {
+            res.status(500).send({ message: 'Server error' });
+        });
+    });
 
 module.exports = router;
