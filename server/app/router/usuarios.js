@@ -18,7 +18,7 @@ router.route('/usuarios')
 
         usuario.nombre = req.body.nombre;
         usuario.apellidos = req.body.apellidos;
-        
+
         usuario.genero = req.body.genero;
         usuario.fechaNacimiento = req.body.fechaNacimiento;
         usuario.descripcion = req.body.descripcion;
@@ -58,5 +58,13 @@ router.route('/usuarios')
 
     });
 
+router.route('/usuarios/:id')
+    .get(function (req, res) {
+        Usuario.findById(req.params.id).then(unUsuario => {
+            res.json(unUsuario);
+        }).catch(err => {
+            res.status(500).send({ message: 'Server error' });
+        });
+    });
 
 module.exports = router;
