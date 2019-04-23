@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GaleriaComponent } from './galeria/galeria.component';
     FooterComponent,
     NavComponent,
     QuienesComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    UnUsuarioComponent
   ],
   imports: [
     BrowserModule,

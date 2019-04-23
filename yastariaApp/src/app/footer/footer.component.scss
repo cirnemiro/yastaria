@@ -1,19 +1,15 @@
-
-footer{
-    display: flex;
-     }
-
 img{
     width:20%;
 }
 div{
     flex:1;
     padding: 2% 5% 2% 5%;
+    flex-wrap: wrap;
     
 }
 
 div:first-of-type{
-    padding-left: 13%;
+    padding-left: 3vw;
 }
 
 
@@ -23,4 +19,5 @@ p:hover{
 }
 p{
     margin:0;
-}    
+} 
+

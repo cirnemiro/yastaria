@@ -1,5 +1,6 @@
 section{
     display: flex;
+    flex-wrap: wrap-reverse;
 }
 
 div:first-of-type{
@@ -17,13 +18,14 @@ figure{
 
 img:first-of-type{
     width:70%;
+    min-width: 150px;;
 }
 
 .grande{
     font-size: calc(2vw + 9px);
 }
 
-h2,{
+h2{
     margin-left: 3%;
     margin-top:3%;
     color:rgb(0, 51, 51);
@@ -58,4 +60,9 @@ button{
 .empresas img{
     flex:1;
    
+}
+@media screen and (max-width: 550px){
+    .empresas{
+        display: block;
+    }
 }

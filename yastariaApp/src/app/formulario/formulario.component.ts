@@ -9,7 +9,7 @@ import { UsuariosService } from '../servicios/usuarios.service';
 })
 export class FormularioComponent implements OnInit {
 
-  nuevoUsuario = new Usuario(0,null,null,null,null,null,null,0,null,null,null,null, null, null);
+  nuevoUsuario = new Usuario(0,0,null,null,null,null,null,null,0,null,null,null,null, null, null,);
 
   constructor(private _userServ: UsuariosService, private _router: Router) { }
 
