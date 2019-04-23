@@ -13,8 +13,7 @@ export class FiltrosComponent implements OnInit {
   tiempo = "tiempo";
   tema = "tema";
 
-@Input()
-usuario;
+
 
   ngOnInit() {
   }
@@ -22,7 +21,7 @@ usuario;
 
 
   buscarFiltro() {
-    console.log('buscarFiltro:', this.puntuacion, this.barrio);
+    console.log('buscarFiltro:', this.puntuacion, this.tiempo, this.tema, this.barrio);
 
   }
 }
