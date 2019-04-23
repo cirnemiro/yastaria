@@ -22,10 +22,10 @@ export class TablonComponent implements OnInit {
     });
   }
 
-  filtraPorCategoria(){
-    // console.log('cambio categoria:', this.categoria);
-    this._userServ.getUsuariosByCategoria(this.categoria).subscribe();
-  }
+  // filtraPorCategoria(){
+  //   // console.log('cambio categoria:', this.categoria);
+  //   this._userServ.getUsuariosByCategoria(this.categoria).subscribe();
+  // }
 
   // filtrarPorFiltro(str, proyId) {
   //   if(this.usuarios){
@@ -44,6 +44,35 @@ export class TablonComponent implements OnInit {
   //     return this.usuarios;
   //   }
   // }
-}
+filtrarUSuarios = function (str) {
+  this.categoria =str;
+  // TSR?
+  if(this.categoria == "tema") {
+    return this.usuarios.sort(function(recA,recB){
+      // recA?
+      if (recA.tema>recB.tema) return 1;
+      // > o <
+      else return -1;
+    });
+  }
+  if(this.categoria == "zona"){
+    return this.usuarios.sort(function(recA,recB){
+      if(recA.zona<recB.zona) return 1;
+      else return -1;
+    });
+  }
+  if(this.categoria == "tiempo")  {
+    return this.usuarios.sort(function(recA,recB){
+      if (recA.tiempo>recB.tiempo) return 1;
+      else return -1;
+    });
+  }
 
+  if(this.categoria == "valoracion")  {
+    return this.usuarios.sort(function(recA,recB){
+      if (recA.valoracion>recB.valoracion) return 1;
+      else return -1;
+    });
+  }
 
+}}

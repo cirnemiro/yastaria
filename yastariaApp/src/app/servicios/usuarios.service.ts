@@ -16,39 +16,27 @@ export class UsuariosService {
 
   constructor(private _http: HttpClient) { }
 
-  getUsuariosFromAPI(): Observable<Usuario[]> {
-    this._usuariosObs=this.$usuariosSub.asObservable();
-    this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d').subscribe(
-      data => {
-        this._usuarios = data;
-        this.$usuariosSub.next(this._usuarios);
-        console.log('usuario recp:',this._usuarios);
-      },
-      error => {
-        console.log("Error:", error);
-        return throwError(error);
-      }
-    );
+  
 
-    return this._usuariosObs;
+  // getUsuariosByCategoria(unaCat):Observable<Usuario[]> {
+  //   return this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d').pipe(
+  //     tap( (data:Usuario[])=>{
+  //       console.log('data:', data);
+  //       this._usuarios=data.filter( unU => unU.puntuacion==unaCat);
+  //       this.$usuariosSub.next(this._usuarios);        
+  //     })
+  //   );
+  // }
+
+  getUsuariosFromAPI():Observable<Usuario[]> {
+    return this._http.get<Usuario[]>('http://localhost:8080/api/usuarios');
   };
 
-  getUsuariosByCategoria(unaCat):Observable<Usuario[]> {
-    return this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d').pipe(
-      tap( (data:Usuario[])=>{
-        console.log('data:', data);
-        this._usuarios=data.filter( unU => unU.puntuacion==unaCat);
-        this.$usuariosSub.next(this._usuarios);        
-      })
-    );
-  }
-
-  addUsuario(unuser: Usuario) {
+  addUsuario(unuser: Usuario){
     this._usuarios.push(unuser);
   }
 
   addUsuarioToAPI(unUser: Usuario) {
-    return this._http.post<Usuario>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d', unUser);
-    //enviar usuario a la API
+    return this._http.post<Usuario>('http://localhost:8080/api/usuarios',unUser);
   }
 }

@@ -3,9 +3,12 @@
       <img src=""/> <p>aquí va el logo + claim</p>
   </div>
   <div>
-    <form #loginForm="ngForm" (ngSubmit)="formularioLogin()">
-      <input type="text" [(ngModel)] = "login.usuario" name= "usuario" placeholder="Nombre de usuarix" required>
-      <input type="text"[(ngModel)] = "login.contra" name= "contra" placeholder="Contraseña" required>
+      <!-- #loginForm="ngForm" (ngSubmit)="formularioLogin()" -->
+    <form  >
+        <!-- [(ngModel)] = "login.usuario" -->
+      <input type="text"  name= "usuario" placeholder="Nombre de usuarix" required>
+      <!-- [(ngModel)] = "login.contra" -->
+      <input type="text" name= "contra" placeholder="Contraseña" required>
       <button>OK</button>
       <p  [routerLink]="['/registro']">Registrarse</p>
     </form>

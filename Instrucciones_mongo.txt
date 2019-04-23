@@ -1,0 +1,14 @@
+DENTRO DE MONGO, PARA EJECUTARLO
+cd "c:\Program Files\MongoDB\Server\4.0\bin\
+mongod --dbpath C:\sebas\workspace\yastaria\data --smallfiles --bind_ip_all
+
+EJECUTAR NODE
+node server.js
+
+EDITAR MONGO
+cd C:\Program Files\MongoDB\Server\4.0\bin
+show databases
+use <database name>
+db.<collection name>.insertMany([{},{}])
+
+curl localhost:8080/api/usuarios
