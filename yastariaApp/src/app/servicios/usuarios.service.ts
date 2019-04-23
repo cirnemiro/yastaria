@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../modelos/usuarios';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
 
   private _usuarios;
+  private _usuariosObs: Observable<Usuario[]>;
+  private $usuariosSub = new BehaviorSubject(this._usuarios);
 
   constructor(private _http: HttpClient) { }
 
@@ -18,7 +21,7 @@ export class UsuariosService {
       params: filtros ? filtros : null
     };
     return this._http.get<Usuario[]>('http://localhost:8080/api/usuarios', options);
-  };
+  }
 
   addUsuario(unuser: Usuario) {
     this._usuarios.push(unuser);

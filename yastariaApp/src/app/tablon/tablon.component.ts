@@ -10,6 +10,7 @@ export class TablonComponent implements OnInit {
   filtro="";
 
   usuarios = null;
+  categoria= "";
 
   constructor(private _userServ: UsuariosService) { }
 
@@ -19,6 +20,12 @@ export class TablonComponent implements OnInit {
     });
   }
   
+}
+  // filtraPorCategoria(){
+  //   // console.log('cambio categoria:', this.categoria);
+  //   this._userServ.getUsuariosByCategoria(this.categoria).subscribe();
+  // }
+
   // filtrarPorFiltro(str, proyId) {
   //   if(this.usuarios){
   //     const subconj = this.usuarios.filter(function (aUser) {
@@ -36,4 +43,4 @@ export class TablonComponent implements OnInit {
   //     return this.usuarios;
   //   }
   // }
-}
+//  
