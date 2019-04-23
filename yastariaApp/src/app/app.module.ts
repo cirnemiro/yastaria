@@ -13,7 +13,11 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { QuienesComponent } from './quienes/quienes.component';
+<<<<<<< HEAD
 import { FiltrosComponent } from './filtros/filtros.component';
+=======
+import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
+>>>>>>> 89516f8b8731daff3c4fc979a7b6aa522bb8444b
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { FiltrosComponent } from './filtros/filtros.component';
     FooterComponent,
     NavComponent,
     QuienesComponent,
+<<<<<<< HEAD
     FiltrosComponent
+=======
+    UnUsuarioComponent
+>>>>>>> 89516f8b8731daff3c4fc979a7b6aa522bb8444b
   ],
   imports: [
     BrowserModule,

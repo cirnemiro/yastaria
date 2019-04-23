@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UsuarioTablonComponent implements OnInit {
 
- constructor() { }
+constructor() { }
 
  @Input()
  usuario;
@@ -15,9 +15,9 @@ export class UsuarioTablonComponent implements OnInit {
  estrellas=[0,0,0,0,0];
 
  ngOnInit() {
-   for (let index = 1; index <= this.usuario.puntuacion; index++) {
-     this.estrellas[index-1]=1;
-   }
- }
-
+      
+      for (let index = 1; index <= this.usuario.puntuacion; index++) {
+        this.estrellas[index-1]=1;
+      }
+  }
 }

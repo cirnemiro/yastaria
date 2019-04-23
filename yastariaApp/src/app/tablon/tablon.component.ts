@@ -15,8 +15,6 @@ export class TablonComponent implements OnInit {
   constructor(private _userServ: UsuariosService) { }
 
   ngOnInit() {
-    // this.usuarios = this._userServ.getUsuarios();
-    // console.log(JSON.stringify(this.usuarios));
     this._userServ.getUsuariosFromAPI().subscribe((listaUsuarios) => {//Consumimos el observable subscribiéndonos y le pasamos una función de callback
       this.usuarios = listaUsuarios;
     });
