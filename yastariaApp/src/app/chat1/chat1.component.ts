@@ -11,13 +11,13 @@ export class Chat1Component implements OnInit {
 
   constructor(private _chatServ: ChatService) { }
 
-  chat1 = new Chat(23, "2019-04-12 23:45", 3, null);
+  chat1 = new Chat(0, "2019-04-12 23:45", 3, null);
 
   listaMsjs:Chat[]=null;
 
 
   ngOnInit() {
-    this._chatServ.getChatFromAPI().subscribe((msjs) => {//Consumimos el observable subscribiéndonos y le pasamos una función de callback
+    this._chatServ.getChatFromAPI().subscribe((msjs) => {
       this.listaMsjs=msjs;
     });
   }

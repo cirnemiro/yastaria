@@ -8,23 +8,24 @@ router.route('/chat')
         Chat.find().then(chats => {
             res.json(chats);
         }).catch(err => {
-            console.log('Error getting mascotas:', err);
+            console.log('Error getting los mensajes del chat:', err);
             res.status(500).send({ message: 'Server error' });
         });
 
     })
     .post(function (req, res) {
-        let mascota = new Mascota();
+        let chat = new Mensaje();
 
-        mascota.nombre = req.body.nombre;
-        mascota.foto = req.body.foto;
-        mascota.edad = req.body.edad;
+        chat.emisor = req.body.nombre;
+        chat.fecha = req.body.foto;
+        chat.receptor = req.body.edad;
+        chat.mensaje = req.body.edad;
 
-        mascota.save().then(savedMascota => {
-            console.log('savedUser:', savedMascota);
+        chat.save().then(savedChat => {
+            console.log('savedUser:', savedChat);
 
-            if (savedMascota) {
-                res.json(savedMascota);
+            if (savedChat) {
+                res.json(savedChat);
             }
         }).catch(err => {
             console.log('Error saving new mascota:', err);
@@ -34,10 +35,10 @@ router.route('/chat')
 
     });
 
-router.route('/mascotas/:pid')
+router.route('/chat/:piemisor/:idreceptor')
     .get(function(req, res){
         // res.json({data:'Hola: '+req.params.pid});
-        Mascota.findById(req.params.pid).then(aMascota => {
+        Chat.findById(req.params.pid).then(aMascota => {
             res.json(aMascota);
         }).catch(err => {
             console.log('Error getting a mascota: '+req.params.pid, err);
