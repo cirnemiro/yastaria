@@ -1,4 +1,4 @@
-<section>
+<section id="intro">
   
   <div><img src="assets/comida.jpg" name="food"></div>
   
@@ -31,7 +31,7 @@
 <section>
   
   <h2 id="tablon"><b>T A B L Ó N</b></h2>
-<div class="oculto">
+<div class="oculto" >
     <span>
       <input type="text" [(ngModel)]="filtro" placeholder="Buscar por palabra"/>
     </span>
@@ -48,7 +48,7 @@
       <option>...</option>
       <option>...</option>
     </select>
-    <section>
+    <section class="tablon">
       <usuario-tablon *ngFor="let unUsuario of usuarios"  [usuario]="unUsuario" [routerLink]="['/usuario',unUsuario._id]"></usuario-tablon>
     </section>
   </div> 
