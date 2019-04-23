@@ -1,29 +1,47 @@
-$color : blue;
+h2{
+color: rgb(0, 51, 51);
+padding-left:3%;
+}
 form{
- border: solid 1px green;
- padding: 1em;
- border-radius: 30px;
-    > div{
-    border: solid 1px;
-    margin:  5px 0;
-    border-radius: 5px;
+    background-color: rgb(165, 189, 167);
+    margin: 0 0 5% 3%;
+}
 
+.borde{
+    border: solid white 2px;
+    margin:3%;
+    padding:1%;
+}
     label{
-        color: green; 
+        color: rgb(0, 51, 51);
     }
     input{
-        color:red;
+        color:rgb(0, 51, 51);
     }
     *{
         width: 90%;
     }
 
     *.ng-touched.ng-valid{
-        border: solid 1px orangered;
+        border: solid 1px green;
     }
     *.ng-touched.ng-invalid{
-        border: solid 1px rebeccapurple;
+        border: solid 1px orange;
     }
-   }
-}
- 
+
+    button:first-of-type{
+        width:15%;
+        color:rgb(0, 51, 51);
+    }
+
+    button:first-of-type{
+        width:30%;
+        color:rgb(0, 51, 51);
+    }
+    
+
+ div:first-of-type{
+     display: flex;
+     text-align: center;
+
+ }

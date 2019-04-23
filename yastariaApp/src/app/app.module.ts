@@ -13,6 +13,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { QuienesComponent } from './quienes/quienes.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { QuienesComponent } from './quienes/quienes.component';
     FormularioComponent,
     FooterComponent,
     NavComponent,
-    QuienesComponent
+    QuienesComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,

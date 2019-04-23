@@ -5,6 +5,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { TablonComponent } from './tablon/tablon.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { Chat1Component } from './chat1/chat1.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 
 
 
@@ -14,10 +15,8 @@ const routes: Routes = [
   { path: 'usuario', component: UsuarioTablonComponent, pathMatch: 'full' },
   { path: 'registro', component: FormularioComponent, pathMatch: 'full' },
   { path: 'quienes-somos', component: QuienesComponent, pathMatch: 'full' },
-
+  { path: 'galeria', component: GaleriaComponent, pathMatch: 'full' },
   { path: '', redirectTo: 'tablon', pathMatch: 'full' },
-
-
 ];
 
 @NgModule({

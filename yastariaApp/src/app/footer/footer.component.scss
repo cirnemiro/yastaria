@@ -1,4 +1,26 @@
-div{
-    justify-content: space-around;
-    border: solid 1px black;
+
+footer{
+    display: flex;
+     }
+
+img{
+    width:20%;
 }
+div{
+    flex:1;
+    padding: 2% 5% 2% 5%;
+    
+}
+
+div:first-of-type{
+    padding-left: 13%;
+}
+
+
+p:hover{
+   font-weight: bold;
+    
+}
+p{
+    margin:0;
+}    
