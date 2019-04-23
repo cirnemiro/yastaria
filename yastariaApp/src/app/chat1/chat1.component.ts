@@ -12,7 +12,7 @@ export class Chat1Component implements OnInit {
 
   constructor(private _chatServ: ChatService, private _route: ActivatedRoute) { }
 
-  chat1 = new Chat(0, "2019-04-12 23:45", 3, null);
+  chat1 = new Chat(0, 0, 0, null);
 
   listaMsjs:Chat[]=null;
 
@@ -22,8 +22,11 @@ export class Chat1Component implements OnInit {
       this.listaMsjs=msjs;
       this._route.params.subscribe(parametros => {
         const userId = parametros['id'];
+        let tiempo = Date.now();
         console.log('id:', userId);
         this.chat1.receptor = userId;
+        this.chat1.fecha = tiempo;
+        this.chat1.emisor = 5;
       });
     });
   }

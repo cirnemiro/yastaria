@@ -28,4 +28,8 @@ export class UsuariosService {
   getUsuarioById(id): Observable<Usuario> {
     return this._http.get<Usuario>(`http://localhost:8080/api/usuarios/${id}`);
   }
+
+  actualizarPuntuacion(nuevaPuntuacion: number){
+    return this._http.post<Usuario>('http://localhost:8080/api/usuarios',nuevaPuntuacion);
+  }
 }
