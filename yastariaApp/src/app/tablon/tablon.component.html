@@ -1,27 +1,37 @@
 <h2>Tablón de anuncios</h2>
-
+<div>
+  <p>DESCRIPCIÓN DEL LUGAR</p>
+</div>
 <span>
   <input type="text" [(ngModel)]="filtro" placeholder="Buscar por palabra"/>
 </span>
-<select>
-  <option selected>Filtro de profesion</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-  <option>...</option>
-</select>
-<section>
 
+<select (change)="filtraPorCategoria()" [(ngModel)]="categoria">
+  <option value="stars">Valoración</option>
+  <option value="theme">Tema</option>
+  <option value="zone">Zona</option>
+  <option value="time">Tiempo</option>
+</select>
+
+<select (change)="filtraPorCategoria()" [(ngModel)]="categoria">
+    <option value="1">1S</option>
+    <option value="2">2S</option>
+    <option value="3">3S</option>
+    <option value="4">4S</option>
+  </select>
+
+<!-- <tr *ngFor="let op of filtraOpc(filtro)">
+    <td>{{op.valoracion}}</td>
+    <td>{{op.tema}}</td>
+    <td>{{op.zona}}</td>
+    <td>{{op.tiempo}}</td>
+    <td>
+      <a [routerLink]="['/opciones', op.valoracion]">QUÉ</a>
+    </td>
+  </tr> -->
+
+
+<section>
   <usuario-tablon *ngFor="let unUsuario of usuarios"  [usuario]="unUsuario"></usuario-tablon>
 
 </section>

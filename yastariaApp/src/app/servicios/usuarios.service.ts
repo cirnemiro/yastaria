@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../modelos/usuarios';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,37 +11,44 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
 
   private _usuarios;
-  //  = [
-  //   new Usuario(1, "Lola", "Lorem ipsum, dolor sit amet", "assets/usuario_vacio.png", 2),
-  //   new Usuario(2, "Lola", "Lorem ipsum, dolor sit amet", "assets/usuario_vacio.png", 2),
-  //   new Usuario(3, "Lola", "Lorem ipsum, dolor sit amet", "assets/usuario_vacio.png", 2),
-  //   new Usuario(4, "Lola", "Lorem ipsum, dolor sit amet", "assets/usuario_vacio.png", 2),
-  //   new Usuario(5, "Lola", "Lorem ipsum, dolor sit amet", "assets/usuario_vacio.png", 2),
-  //   new Usuario(6, "Lola", "Lorem ipsum, dolor sit amet", "assets/usuario_vacio.png", 2)
-  // ];
+  private _usuariosObs: Observable<Usuario[]>;
+  private $usuariosSub = new BehaviorSubject(this._usuarios);
 
   constructor(private _http: HttpClient) { }
 
-  // getUsuarios(){
-  //   return this._usuarios;
-  // }
+  getUsuariosFromAPI(): Observable<Usuario[]> {
+    this._usuariosObs=this.$usuariosSub.asObservable();
+    this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d').subscribe(
+      data => {
+        this._usuarios = data;
+        this.$usuariosSub.next(this._usuarios);
+        console.log('usuario recp:',this._usuarios);
+      },
+      error => {
+        console.log("Error:", error);
+        return throwError(error);
+      }
+    );
 
-  getUsuariosFromAPI():Observable<Usuario[]> {
-    return this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d');
+    return this._usuariosObs;
   };
 
-  // getUsuariosById(unId) {
-  //   return this._usuarios.find(function (aUser) {
-  //     return aUser.id == unId;
-  //   });
-  // }
+  getUsuariosByCategoria(unaCat):Observable<Usuario[]> {
+    return this._http.get<Usuario[]>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d').pipe(
+      tap( (data:Usuario[])=>{
+        console.log('data:', data);
+        this._usuarios=data.filter( unU => unU.puntuacion==unaCat);
+        this.$usuariosSub.next(this._usuarios);        
+      })
+    );
+  }
 
-  addUsuario(unuser: Usuario){
+  addUsuario(unuser: Usuario) {
     this._usuarios.push(unuser);
   }
 
   addUsuarioToAPI(unUser: Usuario) {
-    return this._http.post<Usuario>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d',unUser);
+    return this._http.post<Usuario>('http://www.mocky.io/v2/5caf4a1b3400009b3dab726d', unUser);
     //enviar usuario a la API
   }
 }

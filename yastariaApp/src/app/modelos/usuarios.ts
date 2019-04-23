@@ -10,6 +10,8 @@ export class Usuario {
     public profesion: string,
     public distrito: string,
     public contra:string,
+    
     public repitecontra:string) {
+
   }
 }
