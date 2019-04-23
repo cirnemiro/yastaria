@@ -22,6 +22,6 @@
 </select>
 <section>
 
-  <usuario-tablon *ngFor="let unUsuario of usuarios"  [usuario]="unUsuario" [routerLink]="['/usuario']"></usuario-tablon>
+  <usuario-tablon *ngFor="let unUsuario of usuarios"  [usuario]="unUsuario" [routerLink]="['/usuario',unUsuario._id]"></usuario-tablon>
 
 </section>

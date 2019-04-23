@@ -24,4 +24,8 @@ export class UsuariosService {
   addUsuarioToAPI(unUser: Usuario) {
     return this._http.post<Usuario>('http://localhost:8080/api/usuarios',unUser);
   }
+
+  getUsuarioById(id): Observable<Usuario> {
+    return this._http.get<Usuario>(`http://localhost:8080/api/usuarios/${id}`);
+  }
 }
