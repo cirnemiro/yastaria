@@ -1,5 +1,5 @@
 <div *ngIf="unUsuario" class="borde marginauto">
-<h3 class="nombre">{{unUsuario.nombre}}</h3>
+<h3 class="nombre">{{unUsuario?.nombre}}</h3>
 <hr class="margenbotom">
 <article>
 <div>
@@ -18,21 +18,21 @@
       <button type="submit"><b>Vota</b></button>
       </form>
     </div>
-    <img class="imagenChat margenbotom inlinedisplay" src="assets/mensaje_chat.png" [routerLink]="['/chat',usuario._id]">
+    <img class="imagenChat margenbotom inlinedisplay" src="assets/mensaje_chat.png" [routerLink]="['/chat',unUsuario?._id]">
   </div>
 </div>
 
 <div>
   <label>Informacion Personal:</label>
-  <p>{{unUsuario.nombre}} {{unUsuario.apellidos}}</p><br>
+  <p>{{unUsuario?.nombre}} {{unUsuario?.apellidos}}</p><br>
   
-  <label>Correo: </label><p>{{unUsuario.correo}}</p><br>
+  <label>Correo: </label><p>{{unUsuario?.correo}}</p><br>
  
-  <label>Poblacion: </label><p>{{unUsuario.barrio}}</p><br>
+  <label>Poblacion: </label><p>{{unUsuario?.barrio}}</p><br>
 
-  <label>Aniversario: </label> <p>{{unUsuario.fechaNacimiento}}</p> <br>
+  <label>Aniversario: </label> <p>{{unUsuario?.fechaNacimiento}}</p> <br>
 
-  <label>Genero: </label> <p>{{unUsuario.genero}}</p>
+  <label>Genero: </label> <p>{{unUsuario?.genero}}</p>
 
 </div>
 
@@ -40,12 +40,12 @@
 <article class="margenbotom">
 <div>
  <label>Ofrecimientos:</label>
- <p>{{unUsuario.ofrece}}</p>
+ <p>{{unUsuario?.ofrece}}</p>
 
 </div>
 <div>
   <label>Necesidades:</label>
-     <p>{{usuario.necesita}}</p>
+     <p>{{unUsuario?.necesita}}</p>
 </div>
 
 
@@ -53,7 +53,7 @@
 <article>
  <div>
  <h3>Amigos</h3>
- <p>{{usuario.amigos}}</p>
+ <p>{{unUsuario?.amigos}}</p>
 
 
  </div>
