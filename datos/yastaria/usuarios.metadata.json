@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"yastaria.usuarios"},{"v":2,"unique":true,"key":{"correo":1},"name":"correo_1","ns":"yastaria.usuarios","background":true}],"uuid":"89ecc65adf75456c860ffbbdfdf08d4d"}
