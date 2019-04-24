@@ -27,7 +27,8 @@
       <b>ENTRA EN TU CUENTA</b>
     </p>
     <div (ngSubmit)="formularioLogin()">
-    <form  [(ngModel)] = "login.usuario" >
+    <!-- <form  [(ngModel)] = "login.usuario" > -->
+      <form>
       <input type="text" name="usuario" placeholder="  Usuario" class="logear" required>
       <br />
       <input type="text" name="contra" placeholder="  Contraseña" class="logear" required>
@@ -49,7 +50,7 @@
   <h2 id="tablon">
     <b>T A B L Ó N</b>
   </h2>
-  <div class="oculto">
+  <div class="oculto marginauto">
     <filtros></filtros>
     <section>
       <usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario" [routerLink]="['/usuario',unUsuario._id]"></usuario-tablon>
