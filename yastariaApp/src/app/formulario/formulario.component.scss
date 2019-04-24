@@ -12,11 +12,14 @@ form{
     margin:3%;
     padding:1%;
 }
+
     label{
         color: rgb(0, 51, 51);
+        width: 60%;
     }
     input{
         color:rgb(0, 51, 51);
+       
     }
     *{
         width: 90%;
@@ -44,4 +47,7 @@ form{
      display: flex;
      text-align: center;
 
+ }
+ label:first-of-type{
+     display: block
  }

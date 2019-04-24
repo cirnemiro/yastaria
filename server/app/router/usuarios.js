@@ -5,8 +5,10 @@ router.route('/usuarios')
 
     .get(function (req, res) {
         const filtro = {};
-        filtro.zona = req.query.zona;
-        filtro.tema = req.query.tema;
+        if(req.query.barrio) filtro.barrio = req.query.barrio;
+        if(req.query.tema) filtro.tema = req.query.tema;
+        if(req.query.tiempo) filtro.tiempo=req.query.tiempo;
+        if(req.query.tema) filtro.tema=req.query.tema;
         console.log('filtro:', filtro);
 
         Usuario.find(filtro).then(usuarios => {

@@ -10,17 +10,27 @@ import { tap, catchError } from 'rxjs/operators';
 
 export class UsuariosService {
 
+
   private _usuarios;
   private _usuariosObs: Observable<Usuario[]>;
   private $usuariosSub = new BehaviorSubject(this._usuarios);
 
   constructor(private _http: HttpClient) { }
 
-  getUsuariosFromAPI(filtros: any): Observable<Usuario[]> {
+  getUsuariosFromAPI(filtros?: any): Observable<Usuario[]> {
     const options = {
       params: filtros ? filtros : null
     };
-    return this._http.get<Usuario[]>('http://localhost:8080/api/usuarios', options);
+
+    this._usuariosObs=this.$usuariosSub.asObservable();
+
+    this._http.get<Usuario[]>('http://localhost:8080/api/usuarios', options).subscribe(data => {
+      console.log(data);
+        this.$usuariosSub.next(data);
+      }
+    );
+
+    return this._usuariosObs;
   }
 
   addUsuario(unuser: Usuario) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
 @Component({
   selector: 'filtros',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltrosComponent implements OnInit {
 
-  constructor() { }
-  puntuacion = "puntuacion";
-  barrio = "barrio";
-  tiempo = "tiempo";
-  tema = "tema";
+
+  constructor(private _filtrar:UsuariosService) { }
+  puntuacion = '';
+  barrio = '';
+  tiempo = '';
+  tema = '';
 
 
 
@@ -22,6 +24,15 @@ export class FiltrosComponent implements OnInit {
 
   buscarFiltro() {
     console.log('buscarFiltro:', this.puntuacion, this.tiempo, this.tema, this.barrio);
+    const filtros={
+      barrio:this.barrio,
+      puntuacion:this.puntuacion,
+      tiempo:this.tiempo,
+      tema:this.tema
+    }
+    this._filtrar.filtrarUsuarios(filtros);
+
+
 
   }
 }
