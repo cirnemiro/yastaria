@@ -5,10 +5,10 @@ router.route('/usuarios')
 
     .get(function (req, res) {
         const filtro = {};
-        if(req.query.barrio) filtro.barrio = req.query.barrio;
-        if(req.query.tema) filtro.tema = req.query.tema;
-        if(req.query.tiempo) filtro.tiempo=req.query.tiempo;
-        if(req.query.tema) filtro.tema=req.query.tema;
+        if (req.query.barrio) filtro.barrio = req.query.barrio;
+        if (req.query.tema) filtro.tema = req.query.tema;
+        if (req.query.tiempo) filtro.tiempo = req.query.tiempo;
+        if (req.query.tema) filtro.tema = req.query.tema;
         console.log('filtro:', filtro);
 
         Usuario.find(filtro).then(usuarios => {
@@ -74,15 +74,13 @@ router.route('/usuarios/:id')
             res.status(500).send({ message: 'Server error' });
         });
     })
-    .post(function (req, res) {
-        
-        Usuario.findOne({ correo: usuario.correo }).then(aUsuario => {
+    .put(function (req, res) {
+
+        Usuario.findById(req.params.id).then(aUsuario => {
             if (aUsuario) {
-                usuario = aUsuario;
-                usuario.puntuacion = req.body.puntuacion;
-                aUsuario = null;
-            } else { res.status(409).send({ message: 'This email already exists' });}
-            
+                aUsuario.puntuacion = req.body.puntuacion;
+            } else { res.status(409).send({ message: 'This email already exists' }); }
+
             return aUsuario;
         }).then(aUsuario => {
             if (aUsuario) aUsuario.save();

@@ -47,8 +47,8 @@ export class UsuariosService {
     return this._http.get<Usuario>(`${environment.API_URL}/usuarios/${id}`);
   }
 
-  actualizarPuntuacion(nuevaPuntuacion: number){
-    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`,nuevaPuntuacion);
+  actualizarPuntuacion(usuarioP){
+    return this._http.put<Usuario>(`${environment.API_URL}/usuarios/${usuarioP._id}`,usuarioP);
   }
 
   filtrarUsuarios(filtros: any) {

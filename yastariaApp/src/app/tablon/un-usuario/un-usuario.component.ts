@@ -9,11 +9,9 @@ import { Usuario } from 'src/app/modelos/usuarios';
   styleUrls: ['./un-usuario.component.scss']
 })
 export class UnUsuarioComponent implements OnInit {
-
- usuarios = null;
- unUsuario: Usuario = null;
- estrellas=[0,0,0,0,0];
- votacion = 0;
+  unUsuario: Usuario = null;
+  estrellas = [0, 0, 0, 0, 0];
+  votacion = 0;
 
   constructor(private _userServ: UsuariosService, private _route: ActivatedRoute) { }
 
@@ -30,41 +28,26 @@ export class UnUsuarioComponent implements OnInit {
       })
     });
   }
-  guardarFormulario(){
+  guardarFormulario() {
     this._route.params.subscribe(parametros => {
       const userId = parametros['id'];
       console.log(' votacion:', this.votacion);
       console.log('id:', userId);
       this._userServ.getUsuarioById(userId).subscribe(user => {
-        this.unUsuario = user;              
+        this.unUsuario = user;
       })
     })
- }
-
-  // ngOnInit() {
-  //   this._route.params.subscribe(parametros => {
-  //     const userId = parametros['id'];
-  //     console.log('id:', userId);
-  //     this._userServ.ge().subscribe(users => {
-  //       this.usuarios = users;
-  //       console.log('this.usuarios:', this.usuarios);
-  //       this.unUsuario = this.usuarios.filter(user => user._id === userId);
-  //       console.log('this.unUsuario:', this.unUsuario);
-  //     })
-  //   });
-  // }
-  
-
-  updatePuntc(){
-    console.log('this.unUsuario.puntuacion:', this.unUsuario.puntuacion);
-        this.unUsuario.puntuacion= Math.floor((this.unUsuario.puntuacion + this.votacion)/2);
-        console.log(' this.unUsuario.puntuacion:',  this.unUsuario.puntuacion);
-        
-        this._userServ.actualizarPuntuacion(this.unUsuario.puntuacion).subscribe(nuevaPuntuacion => {
-          console.log('nuevaPuntuacion:', nuevaPuntuacion);
-          
-        })
   }
 
 
+
+  updatePuntc() {
+    console.log('this.unUsuario.puntuacion:', this.unUsuario.puntuacion);
+    this.unUsuario.puntuacion = Math.floor((this.unUsuario.puntuacion + this.votacion) / 2);
+    console.log(' this.unUsuario:', this.unUsuario);
+
+    this._userServ.actualizarPuntuacion(this.unUsuario).subscribe(data => {
+      console.log('usuarioAct:', data);
+    })
+  }
 }
