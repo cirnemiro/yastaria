@@ -27,7 +27,8 @@
       <b>ENTRA EN TU CUENTA</b>
     </p>
     <div (ngSubmit)="formularioLogin()">
-    <form  [(ngModel)] = "login.usuario" >
+    <form   >
+        <!-- [(ngModel)] = "login.usuario" -->
       <input type="text" name="usuario" placeholder="  Usuario" class="logear" required>
       <br />
       <input type="text" name="contra" placeholder="  Contraseña" class="logear" required>

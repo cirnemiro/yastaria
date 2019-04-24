@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Login } from 'src/app/modelos/login';
+import { Login } from 'src/app/modelos/login';
 import { LoginService } from 'src/app/servicios/login.service';
 import { Router } from '@angular/router';
 
@@ -11,18 +11,18 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  login= new Login(null, null);
-  
-  constructor(private _logServ:LoginService, private _routerlog:Router) { }
+  login = new Login(null, null);
+
+  constructor(private _logServ: LoginService, private _routerlog: Router) { }
 
   ngOnInit() {
   }
 
-  formularioLogin(){
+  formularioLogin() {
     console.log('Nombre usuarix: ', this.login);
-    this._logServ.addLoginToAPI(this.login).subscribe(login=>{
-      console.log('Contraseña: ',login);
+    this._logServ.addLoginToAPI(this.login).subscribe(login => {
+      console.log('Contraseña: ', login);
     });
-  
-    }
+
+  }
 }

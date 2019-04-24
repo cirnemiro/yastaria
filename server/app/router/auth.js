@@ -8,7 +8,7 @@ router.route('/auth')
         let user = req.body.usuario;
         let password = req.body.contra;
 
-        Usuario.findOne({ usuario: user, contra: password }, function (err, userLoggedIn) {
+        Usuario.findOne({ correo: user, contra: password }, function (err, userLoggedIn) {
             if (err) res.status(500).send({ message: 'Server error' });
             else {
                 if (!userLoggedIn) res.status(404).send({ message: 'There is no account with this email' });
