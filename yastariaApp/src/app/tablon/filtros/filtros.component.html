@@ -1,17 +1,21 @@
 <p>BUSCAR POR FILTRO</p>
+
+
+<label>Puntuación</label><label>Barrio</label><label>Tiempo</label><label>Tema</label>
+
 <form (ngSubmit)="buscarFiltro()">
   <select name="puntuacion" [(ngModel)]="puntuacion">
-    <option selected="selected" value="0" disabled>Puntuación</option>
-    <option value="5 estrellas">5 Estrellas</option>
-    <option value="4 estrellas">4 Estrellas</option>
-    <option value="3 estrellas">3 Estrellas</option>
-    <option value="2 estrellas">2 Estrellas</option>
-    <option value="1 estrellas">1 Estrella</option>
+    <option value="">Todas</option>
+    <option value="5">5 Estrellas</option>
+    <option value="4">4 Estrellas</option>
+    <option value="3">3 Estrellas</option>
+    <option value="2">2 Estrellas</option>
+    <option value="1">1 Estrella</option>
   </select>
 
 
   <select name="barrio" [(ngModel)]="barrio">
-    <option value="0" disabled>Barrio</option>
+    <option value="">Todos</option>
     <option value="ciutat vella">Ciutat Vella</option>
     <option value="eixample">Eixample</option>
     <option value="sants montjuic">Sants-Montjuic</option>
@@ -28,7 +32,7 @@
 
 
   <select name="tiempo" [(ngModel)]="tiempo">
-    <option selected value="0" disabled>Tiempo</option>
+    <option value="">Todos</option>
     <option value="hoy">Hoy</option>
     <option value="esta semana">Esta semana</option>
     <option value="proxima semana">La próxima semana</option>
@@ -40,8 +44,8 @@
     <option value="noche">Por la noche</option>
   </select>
 
-  <select name="tema" [(ngModel)]="tema">
-    <option selected="selected" value="0" disabled>Tema</option>
+  <select name="tema" [(ngModel)]="tema">>
+    <option value="">Todos</option>
     <option value="cultura">Cultura</option>
     <option value="hogar">Hogar</option>
     <option value="deporte">Deporte</option>

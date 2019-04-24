@@ -1,12 +1,13 @@
-<div *ngIf="unUsuario">
-<h3>{{unUsuario.nombre}}</h3>
+<div *ngIf="unUsuario" class="borde marginauto">
+<h3 class="nombre">{{unUsuario?.nombre}}</h3>
+<hr class="margenbotom">
 <article>
 <div>
-  <img class="usuario" src={{unUsuario.foto}}>
+  <img class="usuario margenbotom1" src="./assets/usuario_vacio.png">
   <div >
     <div>
-      <img class="estrellas" *ngFor="let str of estrellas" [src]="str?'assets/estrella_dorada.png':'assets/estrella_nodorada.png'"  />
-      <form (ngSubmit)="guardarFormulario()">
+      <img class="estrellas margenbotom1" *ngFor="let str of estrellas" [src]="str?'assets/estrella_dorada.png':'assets/estrella_nodorada.png'"  />
+      <form class="inlinedisplay" (ngSubmit)="guardarFormulario()">
         <select name="votacion" [(ngModel)]="votacion" >
         <option  value="1">1 Estrella</option>
         <option value="2">2 Estrella</option>
@@ -17,61 +18,34 @@
       <button type="submit"><b>Vota</b></button>
       </form>
     </div>
-    <img class="imagenChat" src="assets/mensaje_chat.png" [routerLink]="['/chat']">
+    <img class="imagenChat margenbotom inlinedisplay" src="assets/mensaje_chat.png" [routerLink]="['/chat',unUsuario?._id]">
   </div>
 </div>
 
 <div>
-  <h3>Informacion Personal:</h3>
-  <h4>{{unUsuario.nombre}} {{unUsuario.apellidos}}</h4>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur quisquam non distinctio blanditiis nostrum voluptas</p>
-  <h4>{{unUsuario.correo}}</h4>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur quisquam non distinctio blanditiis nostrum voluptas</p>
-  <h4>{{unUsuario.poblacion}}</h4>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur quisquam non distinctio blanditiis nostrum voluptas</p>
-  <h4>{{unUsuario.fechaNacimiento}}</h4>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur quisquam non distinctio blanditiis nostrum voluptas</p>
-  <h4>{{unUsuario.genero}}</h4>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur quisquam non distinctio blanditiis nostrum voluptas</p>
+  <label>Informacion Personal:</label>
+  <p>{{unUsuario?.nombre}} {{unUsuario?.apellidos}}</p><br>
+  
+  <label>Correo: </label><p>{{unUsuario?.correo}}</p><br>
+ 
+  <label>Poblacion: </label><p>{{unUsuario?.barrio}}</p><br>
+
+  <label>Aniversario: </label> <p>{{unUsuario?.fechaNacimiento}}</p> <br>
+
+  <label>Genero: </label> <p>{{unUsuario?.genero}}</p>
+
 </div>
 
 </article>
-<article>
+<article class="margenbotom">
 <div>
- <h2>Ofrecimientos:</h2>
- <h3>Hoy:</h3>
- <p>{{unUsuario.ofrece}}</p>
- <p>...</p>
+ <label>Ofrecimientos:</label>
+ <p>{{unUsuario?.ofrece}}</p>
 
- <p>...</p>
-
- <p>...</p>
- <h3>Ayer:</h3>
- <p>{{unUsuario.ofrece}}</p>
- <p>...</p>
-
- <p>...</p>
-
- <p>...</p>
 </div>
 <div>
-  <h2>Necesidades:</h2>
-  <h3>Hoy:</h3>
-     <p>{{unUsuario.necesita}}</p>
-
- <p>...</p>
-
- <p>...</p>
-
- <p>...</p>
- <h3>Ayer:</h3>
- <p>{{unUsuario.necesita}}</p>
-
- <p>...</p>
-
- <p>...</p>
-
- <p>...</p>
+  <label>Necesidades:</label>
+     <p>{{unUsuario?.necesita}}</p>
 </div>
 
 
@@ -79,13 +53,8 @@
 <article>
  <div>
  <h3>Amigos</h3>
- <p>{{unUsuario.amigos}}</p>
+ <p>{{unUsuario?.amigos}}</p>
 
- <p>...</p>
-
- <p>...</p>
-
- <p>...</p>
 
  </div>
 </article>
