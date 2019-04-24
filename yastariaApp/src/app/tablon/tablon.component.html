@@ -26,12 +26,15 @@
     <p>
       <b>ENTRA EN TU CUENTA</b>
     </p>
-    <form>
+    <div (ngSubmit)="formularioLogin()">
+    <form  [(ngModel)] = "login.usuario" >
       <input type="text" name="usuario" placeholder="  Usuario" class="logear" required>
       <br />
       <input type="text" name="contra" placeholder="  Contraseña" class="logear" required>
-      <p>| OK |</p>
+      <br />
+      <button>| OK |</button>
     </form>
+  </div>
   </div>
   <div>
     <p [routerLink]="['/registro']">
