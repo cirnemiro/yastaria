@@ -13,7 +13,8 @@ export class Usuario {
     public tiempo: string,
     public tema: string,
     public descripcion: string,
-    public foto: string
+    public foto: string,
+    public puntuacion: number
     
   ) 
 

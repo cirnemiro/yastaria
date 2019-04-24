@@ -25,12 +25,14 @@ router.route('/usuarios')
         usuario.nombre = req.body.nombre;
         usuario.apellidos = req.body.apellidos;
 
-        usuario.genero = req.body.genero;
+        // usuario.genero = req.body.genero;
         usuario.fechaNacimiento = req.body.fechaNacimiento;
         usuario.descripcion = req.body.descripcion;
         usuario.foto = req.body.foto;
-        usuario.codigoPostal = req.body.codigoPostal;
+        // usuario.codigoPostal = req.body.codigoPostal;
         usuario.barrio = req.body.barrio;
+        usuario.tema = req.body.tema;
+        usuario.tiempo = req.body.tiempo;
 
         usuario.puntuacion = req.body.puntuacion;
         usuario.ofrece = req.body.ofrece;
@@ -71,6 +73,33 @@ router.route('/usuarios/:id')
         }).catch(err => {
             res.status(500).send({ message: 'Server error' });
         });
+    })
+    .post(function (req, res) {
+        
+        Usuario.findOne({ correo: usuario.correo }).then(aUsuario => {
+            if (aUsuario) {
+                usuario = aUsuario;
+                usuario.puntuacion = req.body.puntuacion;
+                aUsuario = null;
+            } else { res.status(409).send({ message: 'This email already exists' });}
+            
+            return aUsuario;
+        }).then(aUsuario => {
+            if (aUsuario) aUsuario.save();
+
+            return aUsuario;
+        }).then(usuarioGuardado => {
+            console.log('usuarioGuardado:', usuarioGuardado);
+
+            if (usuarioGuardado) {
+                res.json(usuarioGuardado);
+            }
+        }).catch(err => {
+            console.log('Error saving new user:', err);
+            res.status(500).send({ message: 'Server error' });
+        });
+
+
     });
 
 module.exports = router;
