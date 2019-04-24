@@ -3,6 +3,8 @@ import { Usuario } from '../modelos/usuarios';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { environment }
+ from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,7 @@ export class UsuariosService {
   constructor(private _http: HttpClient) { }
 
   getUsuariosFromAPI():Observable<Usuario[]> {
-    return this._http.get<Usuario[]>('http://localhost:8080/api/usuarios');
+    return this._http.get<Usuario[]>(`${environment.API_URL}/usuarios`);
   };
 
   addUsuario(unuser: Usuario){
@@ -25,14 +27,14 @@ export class UsuariosService {
   }
 
   addUsuarioToAPI(unUser: Usuario) {
-    return this._http.post<Usuario>('http://localhost:8080/api/usuarios',unUser);
+    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`,unUser);
   }
 
   getUsuarioById(id): Observable<Usuario> {
-    return this._http.get<Usuario>(`http://localhost:8080/api/usuarios/${id}`);
+    return this._http.get<Usuario>(`${environment.API_URL}/usuarios/${id}`);
   }
 
   actualizarPuntuacion(nuevaPuntuacion: number){
-    return this._http.post<Usuario>('http://localhost:8080/api/usuarios',nuevaPuntuacion);
+    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`,nuevaPuntuacion);
   }
 }

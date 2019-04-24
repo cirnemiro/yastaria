@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Chat } from 'src/app/modelos/chat';
 import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { environment }
+ from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,7 @@ export class ChatService {
     // return this._http.get<Chat[]>('http://www.mocky.io/v2/5cb06ef13100006c00e1344a');
 
     this._mensajesObs = this.$mensajesSub.asObservable();
-    this._http.get<Chat[]>('http://localhost:8080/api/chat').subscribe(
+    this._http.get<Chat[]>(`${environment.API_URL}/chat`).subscribe(
       data => {
         // lo que ve en el mocky se guarda en data
         this._mensajes = data;
@@ -35,7 +37,7 @@ export class ChatService {
   };
 
   addChatToAPI(chat1: Chat): Observable<Chat> {
-    return this._http.post<Chat>('http://localhost:8080/api/chat', chat1).pipe(
+    return this._http.post<Chat>(`${environment.API_URL}/chat`, chat1).pipe(
       tap(msjsrec => { 
         this._mensajes.push(msjsrec);
         this.$mensajesSub.next(this._mensajes);
