@@ -52,7 +52,7 @@
   <div class="oculto">
     <filtros></filtros>
     <section>
-      <usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario"></usuario-tablon>
+      <usuario-tablon *ngFor="let unUsuario of usuarios" [usuario]="unUsuario" [routerLink]="['/usuario',unUsuario._id]"></usuario-tablon>
     </section>
   </div>
 </section>

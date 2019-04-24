@@ -37,6 +37,13 @@ export class UnUsuarioComponent implements OnInit {
       console.log('id:', userId);
       this._userServ.getUsuarioById(userId).subscribe(user => {
         this.unUsuario = user;
+        console.log('this.unUsuario.puntuacion:', this.unUsuario.puntuacion);
+        this.unUsuario.puntuacion= Math.floor((this.unUsuario.puntuacion + this.votacion)/2);
+        console.log(' this.unUsuario.puntuacion:',  this.unUsuario.puntuacion);
+        this._userServ.actualizarPuntuacion(this.unUsuario.puntuacion).subscribe(nuevaPuntuacion => {
+          console.log('nuevaPuntuacion:', nuevaPuntuacion);
+          
+        })
         // console.log('user:', user);
         // this.unUsuario.puntuacion=(parseInt(this.votacion)+parseInt(this.unUsuario.puntuacion))/2;
         // console.log(' this.unUsuario.puntuacion:',  this.unUsuario.puntuacion);
