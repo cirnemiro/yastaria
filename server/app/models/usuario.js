@@ -14,6 +14,7 @@ const UsuarioSchema   = new Schema({
     puntuacion: Number,
     ofrece: [String],
     necesita: [String],
+    tema: String,
     correo: {
         type: String,
         required: true,
