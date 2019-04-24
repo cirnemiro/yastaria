@@ -1,14 +1,26 @@
 DENTRO DE MONGO, PARA EJECUTARLO
+Primer CMD
 cd "c:\Program Files\MongoDB\Server\4.0\bin\
-mongod --dbpath C:\sebas\workspace\yastaria\data --smallfiles --bind_ip_all
+	mongod --dbpath C:\sebas\workspace\yastaria\data --smallfiles --bind_ip_all
 
-EJECUTAR NODE
-node server.js
-
+Segundo CMD
+cd "c:\Program Files\MongoDB\Server\4.0\bin\
+	mongo
 EDITAR MONGO
 cd C:\Program Files\MongoDB\Server\4.0\bin
 show databases
 use <database name>
 db.<collection name>.insertMany([{},{}])
 
+
+
+Tercero CMD
+cd C:\VICTORIA\workspace\yastaria\server
+	npm install mongo
+	EJECUTAR NODE
+	node server.js
+
+
+Cuarto CMD
+cd C:\VICTORIA\workspace\yastaria\server
 curl localhost:8080/api/usuarios
