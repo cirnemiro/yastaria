@@ -18,7 +18,7 @@ export class ChatService {
     // return this._http.get<Chat[]>('http://www.mocky.io/v2/5cb06ef13100006c00e1344a');
 
     this._mensajesObs = this.$mensajesSub.asObservable();
-    this._http.get<Chat[]>('http://www.mocky.io/v2/5cb06ef13100006c00e1344a').subscribe(
+    this._http.get<Chat[]>('http://localhost:8080/api/chat').subscribe(
       data => {
         // lo que ve en el mocky se guarda en data
         this._mensajes = data;
@@ -35,7 +35,7 @@ export class ChatService {
   };
 
   addChatToAPI(chat1: Chat): Observable<Chat> {
-    return this._http.post<Chat>('http://www.mocky.io/v2/5cb070643100008400e13460', chat1).pipe(
+    return this._http.post<Chat>('http://localhost:8080/api/chat', chat1).pipe(
       tap(msjsrec => { 
         this._mensajes.push(msjsrec);
         this.$mensajesSub.next(this._mensajes);

@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const usuarios = require('./usuarios');
+const usuarios_priv = require('./usuarios_priv');
 const chat = require('./chat');
+const auth = require('./auth');
 
 
 // middleware to use for all requests
@@ -17,6 +19,8 @@ router.get('/', function(req, res) {
 
 router.use(usuarios);
 router.use(chat);
+router.use(auth);
+router.use(usuarios_priv);
 
 // FUNCTIONS FOR TRAINEDS
 

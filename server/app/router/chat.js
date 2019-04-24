@@ -16,10 +16,14 @@ router.route('/chat')
     .post(function (req, res) {
         let chat = new Mensaje();
 
-        chat.emisor = req.body.nombre;
-        chat.fecha = req.body.foto;
-        chat.receptor = req.body.edad;
-        chat.mensaje = req.body.edad;
+        chat.emisor = 5;
+        chat.fecha = new Date();
+
+        //como pasamos la id del receptor? Es necesario guardarla en el chat?
+        chat.receptor = req.body.receptor;
+        
+        //Que nombre se le pasa al req para que se guarde el mensaje? chat1?
+        chat.mensaje = req.body.chat1;
 
         chat.save().then(savedChat => {
             console.log('savedUser:', savedChat);

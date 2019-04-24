@@ -12,7 +12,11 @@ export class Chat1Component implements OnInit {
 
   constructor(private _chatServ: ChatService, private _route: ActivatedRoute) { }
 
+<<<<<<< HEAD
   chat1 = new Chat(0, 0, 0, null);
+=======
+  chat1 = new Chat(0, null, 0, null);
+>>>>>>> b6f97d6032aee6a4c2f384cb361a7538f652e613
 
   listaMsjs:Chat[]=null;
 
@@ -25,7 +29,10 @@ export class Chat1Component implements OnInit {
         let tiempo = Date.now();
         console.log('id:', userId);
         this.chat1.receptor = userId;
+<<<<<<< HEAD
         this.chat1.fecha = tiempo;
+=======
+>>>>>>> b6f97d6032aee6a4c2f384cb361a7538f652e613
         this.chat1.emisor = 5;
       });
     });
@@ -34,6 +41,7 @@ export class Chat1Component implements OnInit {
   enviarMensaje() {
     console.log('Mensaje: ', this.chat1);
     this._chatServ.addChatToAPI(this.chat1).subscribe(chatCambiado => {
+      //Tengo que pasar también la id del emisor y la del receptor para que se guarde en la base de datos?
       console.log('Info del mensaje: ', chatCambiado);
     });
   }

@@ -3,7 +3,7 @@
 <div>
   <h2>CHAT</h2>
   <div class="mensajes">
-    <output *ngFor="let aM of listaMsjs" [class]="aM.emisor===23?'enviado':'recibido'">
+    <output *ngFor="let aM of listaMsjs" [class]="aM.emisor===5?'enviado':'recibido'">
       {{aM.fecha}} | {{aM.emisor}} | {{aM.mensaje}}
     </output>
     <!--mensajes del chat, división entre emisor y receptor según id-->
