@@ -12,6 +12,7 @@ import { DocumentService } from './services/document.service';
 })
 export class Chat1Component implements OnInit {
 
+   
   constructor(private _chatServ: ChatService, private _route: ActivatedRoute, private documentService: DocumentService) { }
 
   chat1 = new Chat(0, 0, 0, null);

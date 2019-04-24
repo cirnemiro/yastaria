@@ -1,7 +1,5 @@
 *{
-   padding: 0;
-   margin: 0;
-   border: 1px solid black;
+  text-align: center;
 }
 article{
    display: flex;
@@ -24,3 +22,33 @@ div:nth-of-type(2){
    width: 30%;
    display: block;
 }
+.borde{
+   border: 3px solid rgb(50, 99, 72);
+   border-radius: 10px;
+   padding: 2vw;
+}
+.marginauto{
+   width: 80%;
+   margin: auto;
+}
+.nombre{
+   font-size: calc(25px + 3vw);
+   color: rgba(52, 52, 226, 0.63);
+}
+p{
+   display: inline
+}
+label{
+   font-size: calc(10px + 1vw);
+   margin-right: 2vw;
+}
+.margenbotom{
+   margin-bottom: 4vw;
+}
+.margenbotom1{
+   margin-bottom: 2vw;
+}
+.inlinedisplay{
+   display: inline
+}
+

@@ -16,6 +16,10 @@ import { QuienesComponent } from './quienes/quienes.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
 import { FiltrosComponent } from 'src/app/tablon/filtros/filtros.component';
+import { FiltroComponent } from './tablon/filtro/filtro.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:8080/usuarios', options: {} };
 
 @NgModule({
   declarations: [
@@ -30,13 +34,15 @@ import { FiltrosComponent } from 'src/app/tablon/filtros/filtros.component';
     QuienesComponent,
     GaleriaComponent,
     UnUsuarioComponent,
-    FiltrosComponent
+    FiltrosComponent,
+    FiltroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

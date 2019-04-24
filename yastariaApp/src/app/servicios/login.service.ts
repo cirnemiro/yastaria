@@ -5,6 +5,7 @@ import { Login } from 'src/app/modelos/login';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from '../../environments/environment';
 import { tap } from 'rxjs/operators';
+import * as jwt_decode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,8 @@ export class LoginService {
     return this._http.post<Login>(`${environment.API_URL}/auth`, login).pipe(
       tap((token: any) => {
         localStorage.setItem('token', token.token);
-
-        // 
-        // nJwt.verify("token.token","secret", 'HS512');
+        console.log('decodificado:',jwt_decode(token.token));
+        
       })
     );
   }

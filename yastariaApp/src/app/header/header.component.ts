@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
     console.log('Nombre usuarix: ', this.login);
     this._logServ.addLoginToAPI(this.login).subscribe(login => {
       console.log('Contraseña: ', login);
+
     });
 
   }

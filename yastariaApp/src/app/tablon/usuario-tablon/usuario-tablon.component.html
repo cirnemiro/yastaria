@@ -2,12 +2,12 @@
 <h3>{{usuario.nombre}}</h3>
 <article>
  <div>
-   <img class="usuario" src={{usuario.foto}}>
+   <img class="usuario" src="./assets/usuario_vacio.png">
    <div >
      <div>
        <img class="estrellas" *ngFor="let str of estrellas" [src]="str?'assets/estrella_dorada.png':'assets/estrella_nodorada.png'"  />
      </div>
-     <img class="imagenChat" src="assets/mensaje_chat.png" [routerLink]="['/chat',usuario._id]">
+     <img class="imagenChat" src="assets/mensaje_chat.png" >
    </div>
  </div>
 
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
           <div class="col-2">
-           <p>{{usuario.tema}}</p>
+           <p>{{usuario.tema}}erwerwer</p>
           </div>
           <div class="col-2">
               <p>{{usuario.barrio}}</p>
