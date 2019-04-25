@@ -9,11 +9,11 @@
       <img class="estrellas margenbotom1" *ngFor="let str of estrellas" [src]="str?'assets/estrella_dorada.png':'assets/estrella_nodorada.png'"  />
       <form class="inlinedisplay" (ngSubmit)="updatePuntc()">
         <select name="votacion" [(ngModel)]="votacion" >
-        <option  value="1">1 Estrella</option>
-        <option value="2">2 Estrella</option>
-        <option value="3">3 Estrella</option>
-        <option value="4">4 Estrella</option>
-        <option value="5">5 Estrella</option>
+        <option  value= "1" >1 Estrella</option>
+        <option value= "2" >2 Estrella</option>
+        <option value= "3" >3 Estrella</option>
+        <option value= "4" >4 Estrella</option>
+        <option value= "5" >5 Estrella</option>
       </select>
       <button type="submit"><b>Vota</b></button>
       </form>

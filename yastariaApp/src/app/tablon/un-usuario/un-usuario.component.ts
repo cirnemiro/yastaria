@@ -46,16 +46,33 @@ export class UnUsuarioComponent implements OnInit {
 
 
   updatePuntc() {
-    console.log('this.unUsuario.puntuacion:', this.unUsuario.puntuacion);
-    this.unUsuario.puntuacion = Math.floor((Math.floor(this.unUsuario.puntuacion) + Math.floor(this.votacion)) / 2);
-    console.log(' this.unUsuario:', this.unUsuario);
+    // this.votacion = parseInt(this.votacion);
+    console.log(this.votacion);
+    console.log(this.unUsuario);
+    this.unUsuario.contpunt++;
+    º                                                                                                   */
+    console.log(this.unUsuario.contpunt)
+    if(this.unUsuario.puntuacion==0){
+      this.unUsuario.puntuacion=this.votacion;
+  
+    }else{
+     
+      this.unUsuario.puntuacion += parseInt(this.votacion.toString());
+      console.log(' this.unUsuario:', this.unUsuario);
 
+      this.unUsuario.puntuacion/this.unUsuario.contpunt
+      
+    }
+    
+    
+    
+    
     this._userServ.actualizarPuntuacion(this.unUsuario).subscribe(data => {
       console.log('usuarioAct:', data);
       console.log('elusuario',this.unUsuario)
-        for (let index = 1; index <= this.unUsuario.puntuacion; index++) {
-          this.estrellas[index-1]=1;
-        }
-    })
+      for (let index = 1; index <= this.unUsuario.puntuacion; index++) {
+        this.estrellas[index-1]=1;
+      }
+    });
   }
 }

@@ -14,7 +14,8 @@ export class Usuario {
     public tema: string,
     public descripcion: string,
     public foto: string,
-    public puntuacion: number
+    public puntuacion: number,
+    public contpunt: number
     
   ) 
 
