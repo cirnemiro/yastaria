@@ -3,6 +3,7 @@ const usuarios = require('./usuarios');
 const usuarios_priv = require('./usuarios_priv');
 const chat = require('./chat');
 const auth = require('./auth');
+const msj = require('./msj');
 
 
 // middleware to use for all requests
@@ -21,6 +22,7 @@ router.use(usuarios);
 router.use(chat);
 router.use(auth);
 router.use(usuarios_priv);
+router.use(msj);
 
 // FUNCTIONS FOR TRAINEDS
 

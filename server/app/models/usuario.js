@@ -12,6 +12,7 @@ const UsuarioSchema   = new Schema({
     codigoPostal: Number,
     barrio: String,
     puntuacion: Number,
+    contpunt:Number,
     ofrece: [String],
     necesita: [String],
     tema: String,

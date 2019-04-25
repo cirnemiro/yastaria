@@ -1,0 +1,15 @@
+<div class="cnt-conversacion-prin row">
+  <div class="cnt-display-conver col-12">
+    <div class="cnt-display col-12">
+      <div *ngFor="let aM of losmsgs" [class]="aM.user==username?'bocadillo origen':'bocadillo destino'">
+        <span class="cnt-msg-usuario">
+          <span class="nombreusuario">{{aM.user==username?aM.user:aM.user}}:</span>
+          <span class="msg">{{aM.txt}}</span>
+        </span>
+      </div>
+    </div>
+    <div class="cnt-input">
+      <input type="text" class="col-12 cajatxt form-control" [(ngModel)]='msgtxt' name="msgtxt"
+        (keyup.enter)='envia()'>
+    </div>
+  </div>

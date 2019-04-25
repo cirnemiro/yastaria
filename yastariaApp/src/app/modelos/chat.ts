@@ -1,8 +1,10 @@
 export class Chat{
     constructor(
-        public emisor:number,
-        public fecha: number, 
-        public receptor: number, 
-        public mensaje: string){
-    }
+        public id: number,
+        public imgPerfil: string,
+        public name: string,
+        public texto:string
+        
+    ){}
 }
+

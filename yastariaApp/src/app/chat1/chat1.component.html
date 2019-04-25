@@ -1,17 +1,13 @@
-{{listaMsjs|json}}
-
-<div>
-  <h2>CHAT</h2>
-  <div class="mensajes">
-    <output *ngFor="let aM of listaMsjs" [class]="aM.emisor===5?'enviado':'recibido'">
-      {{aM.fecha}} | {{aM.emisor}} | {{aM.mensaje}}
-    </output>
-    <!--mensajes del chat, división entre emisor y receptor según id-->
-  </div>
-
-  <hr>
-  <form #chatForm="ngForm" (ngSubmit)="enviarMensaje()">
-    <input type="text" [(ngModel)]="chat1.mensaje" name="mensaje" placeholder="Escribe aquí tu mensaje" required />
-    <button>Enviar</button>
-  </form>
+<div *ngFor="let conv of conversaciones; let i = index;" class="col-12">
+  <a [routerLink]="['/conversacion', conv.idOrig, conv.idDest]">
+    <div class="row chat">
+      <img class="rounded-circle col-1" [src]="conv.imgPerfil">
+      <p class="col-1">{{nombreDestino[i]}}</p>
+      <p class="col-9">{{conv.texto}}</p>
+    </div>
+  </a>
 </div>
+<div>
+  <!-- <button [routerLink]="['/chats']">CHATS</button> -->
+</div>
+<!-- {{usuarios|json}} -->

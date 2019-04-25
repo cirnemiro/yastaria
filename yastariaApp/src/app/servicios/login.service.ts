@@ -18,9 +18,10 @@ export class LoginService {
   addLoginToAPI(login: Login): Observable<Login> {
     return this._http.post<Login>(`${environment.API_URL}/auth`, login).pipe(
       tap((token: any) => {
-        localStorage.setItem('token', token.token);
-        console.log('decodificado:',jwt_decode(token.token));
-        
+        // console.log("token: ",token);
+        return token.token;
+        // console.log('decodificado:',jwt_decode(token.token));
+        // return jwt_decode(token.token);
       })
     );
   }

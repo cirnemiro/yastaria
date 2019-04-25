@@ -35,6 +35,7 @@ router.route('/usuarios')
         usuario.tiempo = req.body.tiempo;
 
         usuario.puntuacion = req.body.puntuacion;
+        usuario.contpunt = req.body.contpunt;
         usuario.ofrece = req.body.ofrece;
         usuario.necesita = req.body.necesita;
 
@@ -76,9 +77,13 @@ router.route('/usuarios/:id')
     })
     .put(function (req, res) {
 
+        console.log('PUT:', req.body);
+
         Usuario.findById(req.params.id).then(aUsuario => {
             if (aUsuario) {
                 aUsuario.puntuacion = req.body.puntuacion;
+                aUsuario.contpunt = req.body.contpunt;
+                console.log('aUsuario.contpunt:', aUsuario);
             } else { res.status(409).send({ message: 'This email already exists' }); }
 
             return aUsuario;
