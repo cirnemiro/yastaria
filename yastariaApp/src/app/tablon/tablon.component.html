@@ -20,22 +20,23 @@
 
 </section>
 
-
 <section id="cuenta">
   <div>
     <p>
       <b>ENTRA EN TU CUENTA</b>
     </p>
-    <div>
-    <form   >
-        <!-- [(ngModel)] = "login.usuario" -->
-      <input type="text" name="usuario" placeholder="  Usuario" class="logear" required>
-      <br />
-      <input type="text" name="contra" placeholder="  Contraseña" class="logear" required>
-      <br />
-      <button>| OK |</button>
-    </form>
-  </div>
+  <div *ngIf="nombre; else elseBlock">Bienvenido {{nombre}}</div>
+   <ng-template #elseBlock>
+   <form (ngSubmit)="formularioLogin()">
+     <input type="text" [(ngModel)] = "login.usuario" name="usuario" placeholder="  Usuario" class="logear" required>
+     <br />
+     <input type="text" [(ngModel)] = "login.contra"  name="contra" placeholder="Contraseña" class="logear" required>
+     <br />
+     <button>| OK |</button>
+   </form>
+ </ng-template>
+
+
   </div>
   <div>
     <p [routerLink]="['/registro']">

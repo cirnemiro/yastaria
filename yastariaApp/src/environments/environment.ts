@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // API_URL: "http://localhost:8080/api",
-  API_URL: "http://172.27.96.198:8080/api"
+  API_URL: "http://172.27.96.198:8080/api",
+  CHAT_URL:'http://172.27.96.127:8080/'
 };
 
 /*

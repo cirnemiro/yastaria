@@ -26,6 +26,9 @@ export class UnUsuarioComponent implements OnInit {
         for (let index = 1; index <= this.unUsuario.puntuacion; index++) {
           this.estrellas[index-1]=1;
         }
+        for (let index = this.unUsuario.puntuacion-1; index = 0; index--) {
+          this.estrellas[index]=0;
+        }
         
         
       })
@@ -49,30 +52,40 @@ export class UnUsuarioComponent implements OnInit {
     // this.votacion = parseInt(this.votacion);
     console.log(this.votacion);
     console.log(this.unUsuario);
-    this.unUsuario.contpunt++;
-    º                                                                                                   */
-    console.log(this.unUsuario.contpunt)
-    if(this.unUsuario.puntuacion==0){
-      this.unUsuario.puntuacion=this.votacion;
+    
+    
+    console.log(' this.votacion:', this.votacion);
   
+    if(this.unUsuario.puntuacion==0 || this.unUsuario.puntuacion==null){
+      this.unUsuario.puntuacion=this.votacion;  
+      this.unUsuario.contpunt=1;  
+    }else if(this.unUsuario.puntuacion>5){
+      this.unUsuario.puntuacion=5;
     }else{
-     
-      this.unUsuario.puntuacion += parseInt(this.votacion.toString());
+      this.unUsuario.contpunt++;
+      console.log('this.unUsuario.contpunt:',this.unUsuario.contpunt);
+      console.log(' this.unUsuario.puntuacion:', this.unUsuario.puntuacion);
+      this.unUsuario.puntuacion = (this.unUsuario.puntuacion)*(1/this.unUsuario.contpunt)*(this.unUsuario.contpunt-1) + parseInt(this.votacion.toString())*(1/this.unUsuario.contpunt);
+      console.log(' this.unUsuario.puntuacion:', this.unUsuario.puntuacion);
       console.log(' this.unUsuario:', this.unUsuario);
-
-      this.unUsuario.puntuacion/this.unUsuario.contpunt
-      
     }
-    
-    
     
     
     this._userServ.actualizarPuntuacion(this.unUsuario).subscribe(data => {
       console.log('usuarioAct:', data);
       console.log('elusuario',this.unUsuario)
+      for (let index = 1; index <= 5; index++) {
+        this.estrellas[index-1]=0;
+      
+      }
       for (let index = 1; index <= this.unUsuario.puntuacion; index++) {
         this.estrellas[index-1]=1;
+      
       }
+      // for (let index = this.unUsuario.puntuacion-1; index = 0; index--) {
+      //   this.estrellas[index]=0;
+      // }
+
     });
   }
 }

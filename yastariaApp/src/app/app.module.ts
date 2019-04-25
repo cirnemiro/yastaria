@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TablonComponent } from './tablon/tablon.component';
 import { UsuarioTablonComponent } from './tablon/usuario-tablon/usuario-tablon.component';
 import { HeaderComponent } from 'src/app/header/header.component';
-import { Chat1Component } from './chat1/chat1.component';
+import { ChatComponent } from 'src/app/chat1/chat1.component';
+import { ConversacionComponent } from './chat1/conversacion/conversacion.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
@@ -17,9 +19,9 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { UnUsuarioComponent } from './tablon/un-usuario/un-usuario.component';
 import { FiltrosComponent } from 'src/app/tablon/filtros/filtros.component';
 import { FiltroComponent } from './tablon/filtro/filtro.component';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import {environment} from '../environments/environment';
 
-const config: SocketIoConfig = { url: 'http://localhost:8080/usuarios', options: {} };
+const config: SocketIoConfig = { url: `${environment.CHAT_URL}/usuarios`, options: {} };
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ const config: SocketIoConfig = { url: 'http://localhost:8080/usuarios', options:
     HeaderComponent,
     TablonComponent,
     UsuarioTablonComponent,
-    Chat1Component,
+    ChatComponent,
     FormularioComponent,
     FooterComponent,
     NavComponent,
@@ -42,6 +44,7 @@ const config: SocketIoConfig = { url: 'http://localhost:8080/usuarios', options:
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     SocketIoModule.forRoot(config)
   ],
   providers: [],
